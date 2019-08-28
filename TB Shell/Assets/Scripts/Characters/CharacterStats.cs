@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterStats : MonoBehaviour
-{
+public class CharacterStats : MonoBehaviour {
     public CharacterController controller;
 
     [Header("Base Stats")]
@@ -17,12 +16,6 @@ public class CharacterStats : MonoBehaviour
     [SerializeField]
     private int health, speed, minDamage, maxDamage, parryChance;
 
-    //[Header("Turn Effects")]
-    //public int damageRecieved;
-    //public int weaponDamageChange;
-    //public int armourChange;
-    //public int weaponSpeedChange;
-
     private void initHealth() {
         health = Resistance * 4;
     }
@@ -35,5 +28,9 @@ public class CharacterStats : MonoBehaviour
     }
     private void initParryChance() {
         parryChance = (Skill / 2) * 10;
+    }
+
+    private void AttackGameObject(CharacterStats enemy) {
+        
     }
 }
