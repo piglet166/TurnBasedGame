@@ -1,0 +1,11 @@
+Paul
+Character coding
+
+animation
+
+
+Dylan
+camera and level design (placement) 
+
+Shravan
+Pathfinding
