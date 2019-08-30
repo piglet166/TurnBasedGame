@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spearman : MonoBehaviour
+public class Spearman : CharacterController
 {
 
     CharacterStats baseStats;
@@ -21,10 +21,10 @@ public class Spearman : MonoBehaviour
 
     private void BaseStats() {
 
-        baseStats.Resistance = 1;
-        baseStats.Agility = 1;
-        baseStats.Damage = 1;
+        baseStats.Resistance = 2;
+        baseStats.Agility = 5;
+        baseStats.Power = 4;
         baseStats.Endurance = 1;
-        baseStats.Skill = 1;
+        baseStats.Skill = 3;
     }
 }

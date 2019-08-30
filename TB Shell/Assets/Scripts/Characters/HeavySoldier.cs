@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HeavySoldier : MonoBehaviour
+public class HeavySoldier : CharacterController
 {
 
     CharacterStats baseStats;
@@ -21,10 +21,10 @@ public class HeavySoldier : MonoBehaviour
 
     private void BaseStats() {
 
-        baseStats.Resistance = 1;
-        baseStats.Agility = 1;
-        baseStats.Damage = 1;
+        baseStats.Resistance = 4;
+        baseStats.Agility = 2;
+        baseStats.Power = 5;
         baseStats.Endurance = 1;
-        baseStats.Skill = 1;
+        baseStats.Skill = 3;
     }
 }

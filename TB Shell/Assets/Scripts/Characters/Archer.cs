@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Archer : MonoBehaviour
+public class Archer : CharacterController
 {
     CharacterStats baseStats;
     private bool knocked;
@@ -22,10 +22,10 @@ public class Archer : MonoBehaviour
     private void BaseStats() {
 
         baseStats.Resistance = 1;
-        baseStats.Agility = 1;
-        baseStats.Damage = 1;
-        baseStats.Endurance = 1;
-        baseStats.Skill = 1;
+        baseStats.Agility = 4;
+        baseStats.Power = 2;
+        baseStats.Endurance = 3;
+        baseStats.Skill = 5;
     }
 
     public void Knock() {

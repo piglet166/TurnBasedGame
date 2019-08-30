@@ -5,12 +5,13 @@ using UnityEngine;
 public class CharacterController : MonoBehaviour
 {
     
-    CharacterStats stats;
+    public CharacterStats stats;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        stats = GetComponent<CharacterStats>();
+        BaseStats();
     }
 
     // Update is called once per frame
@@ -18,6 +19,8 @@ public class CharacterController : MonoBehaviour
     {
         
     }
+
+    private void BaseStats() { }
 
     private void Death(int h) {
 
