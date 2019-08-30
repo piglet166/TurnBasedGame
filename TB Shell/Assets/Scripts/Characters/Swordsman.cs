@@ -2,15 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Swordsman : CharacterController{
+public class Swordsman : ClassController{
 
-    CharacterStats baseStats;
-    
-    // Start is called before the first frame update
     void Start() {
-        
+        baseStats = GetComponent<CharacterStats>();
+        BaseStats();
     }
-
     // Update is called once per frame
     void Update() {
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterStats : MonoBehaviour {
-    public CharacterController controller;
+    public ClassController controller;
 
     [Header("Base Stats")]
     public int Resistance;
@@ -29,7 +29,7 @@ public class CharacterStats : MonoBehaviour {
         health = Resistance * 4;
     }
     private void initSpeed(int armour, int weapon) {
-        speed = (Agility * 2) - (controller.turnWeight(armour, weapon) / Endurance);
+        speed = (Agility * 2);//- (controller.turnWeight(armour, weapon) / Endurance);
     }
     private void initPower(int weapon) {
         maxDamage = Power + weapon;

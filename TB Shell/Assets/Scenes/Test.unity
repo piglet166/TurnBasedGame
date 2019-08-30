@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 128582021}
   - component: {fileID: 128582020}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Swordsman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bf660a80d946d49865cae3d95c80a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 0}
+  baseStats: {fileID: 0}
 --- !u!4 &128582022
 Transform:
   m_ObjectHideFlags: 0

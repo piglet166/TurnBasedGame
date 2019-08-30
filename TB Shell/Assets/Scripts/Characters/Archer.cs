@@ -2,17 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Archer : CharacterController
+public class Archer : ClassController
 {
-    CharacterStats baseStats;
-    private bool knocked;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        knocked = false;
-    }
+    private bool knocked = false;
 
+    void Start() {
+        baseStats = GetComponent<CharacterStats>();
+        BaseStats();
+    }
     // Update is called once per frame
     void Update()
     {

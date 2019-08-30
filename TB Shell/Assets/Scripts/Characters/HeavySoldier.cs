@@ -2,17 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HeavySoldier : CharacterController
+public class HeavySoldier : ClassController
 {
 
-    CharacterStats baseStats;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    void Start() {
+        baseStats = GetComponent<CharacterStats>();
+        BaseStats();
     }
-
     // Update is called once per frame
     void Update()
     {

@@ -2,22 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterController : MonoBehaviour
+public class ClassController : MonoBehaviour
 {
-    
-    public CharacterStats stats;
-    
+    public CharacterStats baseStats;
+
     // Start is called before the first frame update
-    void Start()
-    {
-        stats = GetComponent<CharacterStats>();
+    void Start() {
+        baseStats = GetComponent<CharacterStats>();
         BaseStats();
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update() {
+
     }
 
     private void BaseStats() { }
@@ -28,11 +25,5 @@ public class CharacterController : MonoBehaviour
             Destroy(gameObject);
         }
 
-    }
-
-    public int turnWeight(int armour, int weapon) {
-        int weight = armour + weapon;
-
-        return weight;
     }
 }
