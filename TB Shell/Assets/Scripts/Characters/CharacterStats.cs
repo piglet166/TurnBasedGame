@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterStats : MonoBehaviour {
-    public ClassController controller;
+    
+    [SerializeField]
+    private EquipmentValues equipment;
 
     [Header("Base Stats")]
     public int Resistance;
@@ -15,6 +17,16 @@ public class CharacterStats : MonoBehaviour {
     [Header("Character Stats")]
     [SerializeField]
     private int health, speed, minDamage, maxDamage, parryChance;
+
+    void Start() {
+        equipment = GetComponent<EquipmentValues>();
+
+        
+        initHealth();
+        initSpeed(equipment.armour, equipment.weapon);
+        initPower(equipment.weapon);
+        initParryChance();
+    }
 
     public void initBaseStats(int r, int a, int p, int e, int s) {
         Resistance = r;
