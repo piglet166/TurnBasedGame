@@ -7,9 +7,9 @@ namespace SA
 {
     public class GridManager : MonoBehaviour
     {
-
+        /*
         #region Variables
-        Node[,] grid;
+        //Node[,] grid;
         public float xzScale = 1.5f;
         float yScale = 2f;
         Vector3 minPos, maxPos;
@@ -19,7 +19,7 @@ namespace SA
 
         void WriteGrid()
         {
-            GridSpace[] gridPosition = GameObject.FindObjectsOfType < GridSpace >();
+            //GridSpace[] gridPosition = GameObject.FindObjectsOfType < GridSpace >();
 
             float minX = float.MaxValue;
             float maxX = float.MinValue;
@@ -74,6 +74,6 @@ namespace SA
 
                 }
             }
-        }
+        }*/
     }
 }
