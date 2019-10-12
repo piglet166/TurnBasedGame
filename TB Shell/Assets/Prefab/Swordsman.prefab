@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9042300807525331833}
   m_Layer: 0
   m_Name: Swordsman
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,8 +58,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fad23c6018d2754cbde5b2daa348ef0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moving: 0
   moveLimit: 0
-  moveSpeed: 0
 --- !u!136 &9042300807525331833
 CapsuleCollider:
   m_ObjectHideFlags: 0

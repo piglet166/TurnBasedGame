@@ -17,6 +17,9 @@ public class Movement : MonoBehaviour {
     int moveSpeed = 2;
     float piecePos = 0;
 
+    protected int moved;
+    protected bool attacked;
+
     protected void Init() {
         tiles = GameObject.FindGameObjectsWithTag("Tile");
 
@@ -34,14 +37,14 @@ public class Movement : MonoBehaviour {
 
         Debug.DrawRay(target.transform.position, -Vector3.up, Color.green);
 
-        if(Physics.Raycast(target.transform.position, -Vector3.up, out hit, 1)) {
+        if (Physics.Raycast(target.transform.position, -Vector3.up, out hit, 1)) {
             tile = hit.collider.GetComponent<Tile>();
         }
         return tile;
     }
 
     public void CreateSurrTileList() {
-        foreach(GameObject tile in tiles) {
+        foreach (GameObject tile in tiles) {
             Tile t = tile.GetComponent<Tile>();
             t.FindSurroundingTiles();
         }
@@ -87,14 +90,14 @@ public class Movement : MonoBehaviour {
     }
 
     public void Move() {
-        if(path.Count > 0) {
+        if (path.Count > 0) {
             Tile t = path.Peek();
             Vector3 target = t.transform.position;
 
             //target.y += piecePos;
             target.y = 0.51f;
 
-            if(Vector3.Distance(transform.position, target) >= 0.05f) {
+            if (Vector3.Distance(transform.position, target) >= 0.05f) {
 
                 CalculateHeading(target);
                 SetVelocity();
@@ -114,14 +117,14 @@ public class Movement : MonoBehaviour {
         }
     }
 
-    protected void RemoveTiles() { 
+    protected void RemoveTiles() {
 
-        if(currentTile != null) {
+        if (currentTile != null) {
             currentTile.current = false;
             currentTile = null;
         }
 
-        foreach(Tile tile in tilesInRange) {
+        foreach (Tile tile in tilesInRange) {
             tile.ResetSearch();
         }
 
@@ -135,5 +138,24 @@ public class Movement : MonoBehaviour {
 
     void SetVelocity() {
         velocity = heading * moveSpeed;
+    }
+
+    public void Attacked(){
+        attacked = true;
+    }
+
+    public void Moved() {
+        moved++;
+    }
+
+    public void TurnReset() {
+        moved = 0;
+        attacked = false;
+    }
+
+    protected void MovementBugCatcher(bool command) {
+        if (!moving && command) {
+            Moved();
+        }
     }
 }
