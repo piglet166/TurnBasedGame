@@ -5,6 +5,7 @@ using UnityEngine;
 public class Tile : MonoBehaviour
 {
     public List<Tile> surrondingTiles = new List<Tile>();
+    public List<Tile> surrondingEnemies = new List<Tile>();
     public Material defMat;
 
     public bool obstacle;
@@ -50,6 +51,15 @@ public class Tile : MonoBehaviour
         CheckTile(-Vector3.right);
     }
 
+    public void FindEnemy() {
+        ResetSearch();
+
+        CheckTile(Vector3.forward, true);
+        CheckTile(-Vector3.forward, true);
+        CheckTile(Vector3.right, true);
+        CheckTile(-Vector3.right, true);
+    }
+
     public void ResetSearch() {
         surrondingTiles.Clear();
 
@@ -62,13 +72,13 @@ public class Tile : MonoBehaviour
     }
 
     public void CheckTile(Vector3 direction) {
-        Vector3 halfExtends = new Vector3(.25f, ((1 + 2)/2f), .25f);
+        Vector3 halfExtends = new Vector3(.25f, ((1 + 2) / 2f), .25f);
         Collider[] colliders = Physics.OverlapBox(transform.position + direction, halfExtends);
 
         foreach (Collider item in colliders) {
             Tile tile = item.GetComponent<Tile>();
 
-            if(tile != null && tile.traversable) {
+            if (tile != null && tile.traversable) {
                 RaycastHit hit;
 
                 if (!Physics.Raycast(tile.transform.position, Vector3.up, out hit, 1)) {
@@ -79,4 +89,22 @@ public class Tile : MonoBehaviour
         }
     }
 
+    public void CheckTile(Vector3 direction, bool attack) {
+        Vector3 halfExtends = new Vector3(.25f, ((1 + 2) / 2f), .25f);
+        Collider[] colliders = Physics.OverlapBox(transform.position + direction, halfExtends);
+
+        foreach (Collider item in colliders) {
+            Tile tile = item.GetComponent<Tile>();
+
+            if (tile != null && tile.traversable) {
+                RaycastHit hit;
+
+                if (Physics.Raycast(tile.transform.position, Vector3.up, out hit, 1) && 
+                    hit.transform.tag == "Enemy") {
+
+                    surrondingEnemies.Add(tile);
+                }
+            }
+        }
+    }
 }

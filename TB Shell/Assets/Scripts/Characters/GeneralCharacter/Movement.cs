@@ -14,6 +14,7 @@ public class Movement : MonoBehaviour {
 
     public bool moving;
     public int moveLimit;
+    public int attackLimit;
     int moveSpeed = 2;
     float piecePos = 0;
 
@@ -129,6 +130,7 @@ public class Movement : MonoBehaviour {
         }
 
         tilesInRange.Clear();
+        Moved();
     }
 
     void CalculateHeading(Vector3 target) {
@@ -153,9 +155,32 @@ public class Movement : MonoBehaviour {
         attacked = false;
     }
 
-    protected void MovementBugCatcher(bool command) {
-        if (!moving && command) {
-            Moved();
+
+    protected void GetAttack() {
+        Debug.Log("Attacked");
+        CreateSurrTileList();
+        GetCurrentTile();
+
+        Queue<Tile> process = new Queue<Tile>();
+        process.Enqueue(currentTile);
+        currentTile.visited = true;
+
+        while (process.Count > 0) {
+            Tile t = process.Dequeue();
+
+            tilesInRange.Add(t);
+            t.selectable = true;
+
+            if (t.tilesMoved < attackLimit) {
+                foreach (Tile tile in t.surrondingTiles) {
+                    if (!tile.visited) {
+                        tile.parent = t;
+                        tile.visited = true;
+                        tile.tilesMoved = 1 + t.tilesMoved;
+                        process.Enqueue(tile);
+                    }
+                }
+            }
         }
     }
 }

@@ -23,6 +23,7 @@ public class Swordsman : MonoBehaviour{
 
         movement = GetComponent<PlayerMove>();
         movement.moveLimit = speed;
+        movement.attackLimit = 1;
     }
     // Update is called once per frame
     void Update() {

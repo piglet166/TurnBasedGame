@@ -23,6 +23,7 @@ public class PlayerMove : Movement
             if (!moving) {
                 BreadthFirstSeach();
                 CheckMouse();
+                PlayerInput();
 
             } else {
                 Move();
@@ -46,7 +47,12 @@ public class PlayerMove : Movement
                     }
                 }
             }
-            MovementBugCatcher(true);
+        }
+    }
+
+    void PlayerInput() {
+        if (Input.GetKeyDown("space")) {
+            GetAttack();
         }
     }
 
