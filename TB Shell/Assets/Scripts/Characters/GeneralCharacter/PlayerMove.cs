@@ -7,6 +7,7 @@ public class PlayerMove : Movement
     public TurnManager mother;
     int myTurn;
     bool mayI;
+    public int attackStrength;
     
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class PlayerMove : Movement
         if (MotherMayI()) {
             if (!moving) {
                 BreadthFirstSeach();
+                EnemyBFS();
                 CheckMouse();
                 PlayerInput();
 
@@ -51,15 +53,26 @@ public class PlayerMove : Movement
     }
 
     void PlayerInput() {
-        if (Input.GetKeyDown("space")) {
-            GetAttack();
+        if (Input.GetMouseButtonUp(1)) {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            RaycastHit hit;
+            if(Physics.Raycast(ray, out hit)) {
+                if(hit.collider.tag == "Enemy") {
+                    CharacterType enemy = hit.collider.GetComponent<CharacterType>();
+
+                    if (enemy.inRange) {
+                        enemy.TakeDamage(attackStrength);
+                        Attacked();
+                    }
+                }
+            }
         }
     }
 
     bool MotherMayI() {
         if (mother.GetTurn() > myTurn) {
             mayI = false;
-            Debug.Log("No");
         } else {
             mayI = true;
         }

@@ -52,12 +52,12 @@ public class Tile : MonoBehaviour
     }
 
     public void FindEnemy() {
-        ResetSearch();
+        ResetEnemySearch();
 
-        CheckTile(Vector3.forward, true);
-        CheckTile(-Vector3.forward, true);
-        CheckTile(Vector3.right, true);
-        CheckTile(-Vector3.right, true);
+        CheckEnemies(Vector3.forward);
+        CheckEnemies(-Vector3.forward);
+        CheckEnemies(Vector3.right);
+        CheckEnemies(-Vector3.right);
     }
 
     public void ResetSearch() {
@@ -69,6 +69,24 @@ public class Tile : MonoBehaviour
         visited = false;
         parent = null;
         tilesMoved = 0;
+    }
+
+    public void ResetEnemySearch() {
+
+        for(int i = 0; i < surrondingEnemies.Count; i++) {
+            CharacterType e;
+            Tile t = surrondingEnemies[i];
+            RaycastHit hit;
+
+            if (Physics.Raycast(t.transform.position, Vector3.up, out hit, 1) &&
+                    hit.transform.tag == "Enemy") {
+
+                e = hit.collider.gameObject.GetComponent<CharacterType>();
+                e.inRange = false;
+            }
+        }
+
+        surrondingEnemies.Clear();
     }
 
     public void CheckTile(Vector3 direction) {
@@ -88,8 +106,8 @@ public class Tile : MonoBehaviour
             }
         }
     }
-
-    public void CheckTile(Vector3 direction, bool attack) {
+        
+    public void CheckEnemies(Vector3 direction) {
         Vector3 halfExtends = new Vector3(.25f, ((1 + 2) / 2f), .25f);
         Collider[] colliders = Physics.OverlapBox(transform.position + direction, halfExtends);
 
@@ -99,8 +117,11 @@ public class Tile : MonoBehaviour
             if (tile != null && tile.traversable) {
                 RaycastHit hit;
 
-                if (Physics.Raycast(tile.transform.position, Vector3.up, out hit, 1) && 
+                if (Physics.Raycast(tile.transform.position, Vector3.up, out hit, 1) &&
                     hit.transform.tag == "Enemy") {
+                    CharacterType e;
+                    e = hit.collider.gameObject.GetComponent<CharacterType>();
+                    e.inRange = true;
 
                     surrondingEnemies.Add(tile);
                 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour {
 
     List<Tile> tilesInRange = new List<Tile>();
+    List<CharacterType> enemiesInRange = new List<CharacterType>();
     Stack<Tile> path = new Stack<Tile>();
     GameObject[] tiles;
 
@@ -51,6 +52,13 @@ public class Movement : MonoBehaviour {
         }
     }
 
+    public void CreateEnemyList() {
+        foreach (GameObject tile in tiles) {
+            Tile e = tile.GetComponent<Tile>();
+            e.FindEnemy();
+        }
+    }
+
     public void BreadthFirstSeach() {
         CreateSurrTileList();
         GetCurrentTile();
@@ -66,6 +74,35 @@ public class Movement : MonoBehaviour {
             t.selectable = true;
 
             if (t.tilesMoved < moveLimit) {
+                foreach (Tile tile in t.surrondingTiles) {
+                    if (!tile.visited) {
+                        tile.parent = t;
+                        tile.visited = true;
+                        tile.tilesMoved = 1 + t.tilesMoved;
+                        process.Enqueue(tile);
+                    }
+                }
+            }
+        }
+    }
+
+    public void EnemyBFS() {
+        CreateEnemyList();
+        GetCurrentTile();
+
+        Queue<Tile> process = new Queue<Tile>();
+        process.Enqueue(currentTile);
+        currentTile.visited = true;
+
+        while (process.Count > 0) {
+            Tile t = process.Dequeue();
+
+            tilesInRange.Add(t);
+            t.selectable = true;
+
+
+
+            if (t.tilesMoved < attackLimit) {
                 foreach (Tile tile in t.surrondingTiles) {
                     if (!tile.visited) {
                         tile.parent = t;
@@ -153,34 +190,5 @@ public class Movement : MonoBehaviour {
     public void TurnReset() {
         moved = 0;
         attacked = false;
-    }
-
-
-    protected void GetAttack() {
-        Debug.Log("Attacked");
-        CreateSurrTileList();
-        GetCurrentTile();
-
-        Queue<Tile> process = new Queue<Tile>();
-        process.Enqueue(currentTile);
-        currentTile.visited = true;
-
-        while (process.Count > 0) {
-            Tile t = process.Dequeue();
-
-            tilesInRange.Add(t);
-            t.selectable = true;
-
-            if (t.tilesMoved < attackLimit) {
-                foreach (Tile tile in t.surrondingTiles) {
-                    if (!tile.visited) {
-                        tile.parent = t;
-                        tile.visited = true;
-                        tile.tilesMoved = 1 + t.tilesMoved;
-                        process.Enqueue(tile);
-                    }
-                }
-            }
-        }
     }
 }
