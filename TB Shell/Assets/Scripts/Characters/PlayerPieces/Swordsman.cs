@@ -5,10 +5,10 @@ using UnityEngine;
 public class Swordsman : MonoBehaviour{
 
     PlayerMove movement;
+    CharacterType stats;
 
     cType swordsMan = cType.tSword;
-    int vitality = 10;
-    int health;
+    int vitality;
     int level = 1;
     int damage;
     int speed;
@@ -16,13 +16,21 @@ public class Swordsman : MonoBehaviour{
     int enemiesDefeated = 0;
 
     void Start() {
-        health = vitality;
+        vitality = 10;
         damage = 5;
         speed = 5;
         defense = 10;
 
         movement = GetComponent<PlayerMove>();
         movement.moveLimit = speed;
+        movement.attackLimit = 1;
+        movement.attackStrength = damage;
+
+        stats = GetComponent<CharacterType>();
+        stats.damage = damage;
+        stats.health = vitality;
+        stats.speed = speed;
+        stats.defense = defense;
     }
     // Update is called once per frame
     void Update() {
@@ -45,10 +53,6 @@ public class Swordsman : MonoBehaviour{
         defense++;
 
         movement.moveLimit = speed;
-    }
-
-    void TakeDamage(int attack) {
-        health = health + (defense/2) - attack;
     }
 
     void Attack() {
