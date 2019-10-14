@@ -2508,13 +2508,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 098306b88f64a413a858753f77d21dfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartPosition: {fileID: 0}
+  StartPosition: {fileID: 46391027}
   WallMask:
     serializedVersion: 2
     m_Bits: 256
   vGridWorldSize: {x: 30, y: 30}
   fNodeRadius: 0.5
   fDistanceBetweenNodes: 0
+  enemy: {fileID: 46391024}
 --- !u!114 &658047262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2673,7 +2674,7 @@ PrefabInstance:
     - target: {fileID: 2914006648524911667, guid: b1be069804ea3784ba38ae9a16daa196,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 2914006648524911667, guid: b1be069804ea3784ba38ae9a16daa196,
         type: 3}

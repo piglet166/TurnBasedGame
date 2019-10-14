@@ -17,6 +17,8 @@ public class Grid : MonoBehaviour
     float fNodeDiameter;
     int iGridSizeX, iGridSizeY;
 
+	public GameObject enemy;
+
     private void Start()
     {
         fNodeDiameter = fNodeRadius * 2;
@@ -125,10 +127,8 @@ public class Grid : MonoBehaviour
                 {
                     if (FinalPath.Contains(n))
                     {
-                        Gizmos.color = Color.red;
-						Gizmos.DrawCube(n.vPosition + new Vector3(0, .1f, 0), Vector3.one * (fNodeDiameter - fDistanceBetweenNodes));
+                        // ADD SKELETON MOVEMENT HERE
 					}
-
                 }
             }
         }
