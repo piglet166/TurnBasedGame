@@ -212,12 +212,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surrondingTiles: []
+  surrondingEnemies: []
   defMat: {fileID: 2100000, guid: eaec3b92424c2b740b5b5b4f3a78f43c, type: 2}
   obstacle: 1
   traversable: 1
   current: 0
   target: 0
+  selectable: 0
   visited: 0
   parent: {fileID: 0}
   heuristic: 0
-  limit: 0
+  tilesMoved: 0

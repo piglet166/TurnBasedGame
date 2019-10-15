@@ -191,4 +191,8 @@ public class Movement : MonoBehaviour {
         moved = 0;
         attacked = false;
     }
+
+    public void CreatePath(Stack<Tile> p) {
+        path = p;
+    }
 }

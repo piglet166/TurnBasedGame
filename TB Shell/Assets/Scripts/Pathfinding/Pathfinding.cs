@@ -7,6 +7,7 @@ public class Pathfinding : MonoBehaviour
     Grid GridReference;
     public Transform StartPosition;
     public Transform TargetPosition;
+    public Movement move;
 
     private void Awake()
     {

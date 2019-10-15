@@ -36,8 +36,10 @@ public class Tile : MonoBehaviour
             GetComponent<Renderer>().material.color = Color.green;
         }
         else if (selectable) {
+            Debug.Log("Pick me!");
             GetComponent<Renderer>().material.color = Color.cyan;
         } else {
+            Debug.Log("defMat");
             GetComponent<Renderer>().material = defMat;
         }
     }
