@@ -8,10 +8,15 @@ public class Pathfinding : MonoBehaviour
     public Transform StartPosition;
     public Transform TargetPosition;
     public Movement move;
+    List<Tile> tilesInRange = new List<Tile>();
+    List<CharacterType> enemiesInRange = new List<CharacterType>();
+    Stack<Tile> path = new Stack<Tile>();
+    GameObject[] tiles;
 
     private void Awake()
     {
         GridReference = GetComponent<Grid>();
+        tiles = GameObject.FindGameObjectsWithTag("Tiles");
     }
 
     private void Update()
@@ -23,9 +28,12 @@ public class Pathfinding : MonoBehaviour
     {
         Node StartNode = GridReference.NodeFromWorldPoint(a_StartPos);
         Node TargetNode = GridReference.NodeFromWorldPoint(a_TargetPos);
+        //Get target and starting tiles instead of nodes
 
-        List<Node> OpenList = new List<Node>();
-        HashSet<Node> ClosedList = new HashSet<Node>();
+        //List<Node> OpenList = new List<Node>();
+        //HashSet<Node> ClosedList = new HashSet<Node>();
+        List<Tile> OpenList = new List<Tile>();
+        HashSet<Tile> ClosedList = new HashSet<Tile>();
 
         OpenList.Add(StartNode);
 
@@ -76,8 +84,10 @@ public class Pathfinding : MonoBehaviour
 
     void GetFinalPath(Node a_StartingNode, Node a_EndNode)
     {
-        List<Node> FinalPath = new List<Node>();
-        Node CurrentNode = a_EndNode;
+        //List<Node> FinalPath = new List<Node>();
+        List<Tile> FinalPath = new List<Tile>();
+        //Node CurrentNode = a_EndNode;
+        Tile CurrentNode = a_EndNode;
 
         while(CurrentNode != a_StartingNode)
         {
