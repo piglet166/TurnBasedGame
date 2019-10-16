@@ -20,6 +20,9 @@ public class Tile : MonoBehaviour
     public int heuristic = 0;
     public int tilesMoved = 0;
 
+    public int igCost;
+    public int ihCost;
+
     void Start() {
         
     }
@@ -36,10 +39,8 @@ public class Tile : MonoBehaviour
             GetComponent<Renderer>().material.color = Color.green;
         }
         else if (selectable) {
-            Debug.Log("Pick me!");
             GetComponent<Renderer>().material.color = Color.cyan;
         } else {
-            Debug.Log("defMat");
             GetComponent<Renderer>().material = defMat;
         }
     }
@@ -130,4 +131,6 @@ public class Tile : MonoBehaviour
             }
         }
     }
+
+    public int FCost { get { return igCost + ihCost; } }
 }

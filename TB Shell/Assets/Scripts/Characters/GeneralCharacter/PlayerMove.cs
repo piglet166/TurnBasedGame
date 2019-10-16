@@ -85,7 +85,7 @@ public class PlayerMove : Movement
             mother.FinishTurn(myTurn);
             TurnReset();
             Debug.Log("Turn Ended");
-        }else if(moved > 0 && attacked) {
+        }else if(attacked) {
             mother.FinishTurn(myTurn);
             TurnReset();
             Debug.Log("Turn Ended");

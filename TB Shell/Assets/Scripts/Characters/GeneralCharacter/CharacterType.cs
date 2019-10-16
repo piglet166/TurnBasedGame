@@ -20,7 +20,7 @@ public class CharacterType : MonoBehaviour
     //public CharacterType parent;
 
     private void Start() {
-        
+        health = 1;
     }
 
     private void Update() {

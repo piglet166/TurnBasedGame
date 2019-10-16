@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Pathfinding : MonoBehaviour
 {
-    Grid GridReference;
-    public Transform StartPosition;
-    public Transform TargetPosition;
     public Movement move;
     List<Tile> tilesInRange = new List<Tile>();
     List<CharacterType> enemiesInRange = new List<CharacterType>();
@@ -15,19 +12,18 @@ public class Pathfinding : MonoBehaviour
 
     private void Awake()
     {
-        GridReference = GetComponent<Grid>();
-        tiles = GameObject.FindGameObjectsWithTag("Tiles");
+        tiles = GameObject.FindGameObjectsWithTag("Tile");
     }
 
     private void Update()
     {
-        FindPath(StartPosition.position, TargetPosition.position);
+        //FindPath(StartPosition, TargetPosition);
     }
 
-    void FindPath(Vector3 a_StartPos, Vector3 a_TargetPos)
+    public void FindPath(GameObject a_StartPos, GameObject a_TargetPos)
     {
-        Node StartNode = GridReference.NodeFromWorldPoint(a_StartPos);
-        Node TargetNode = GridReference.NodeFromWorldPoint(a_TargetPos);
+        Tile StartTile = move.GetTarget(a_StartPos);
+        Tile TargetTile = move.GetTarget(a_TargetPos);
         //Get target and starting tiles instead of nodes
 
         //List<Node> OpenList = new List<Node>();
@@ -35,11 +31,11 @@ public class Pathfinding : MonoBehaviour
         List<Tile> OpenList = new List<Tile>();
         HashSet<Tile> ClosedList = new HashSet<Tile>();
 
-        OpenList.Add(StartNode);
+        OpenList.Add(StartTile);
 
         while(OpenList.Count > 0)
         {
-            Node CurrentNode = OpenList[0];
+            Tile CurrentNode = OpenList[0];
 
 			for (int i = 1; i < OpenList.Count; i++)
             {
@@ -52,14 +48,22 @@ public class Pathfinding : MonoBehaviour
 			OpenList.Remove(CurrentNode);
             ClosedList.Add(CurrentNode);
 
-            if (CurrentNode == TargetNode)
+            Vector3 CurrentVector = CurrentNode.transform.position;
+            Vector3 TargetVector = TargetTile.transform.position;
+
+            //trash code
+            TargetVector.x--;
+
+            if (CurrentVector == TargetVector)
             {
-                GetFinalPath(StartNode, TargetNode);
+                GetFinalPath(StartTile, CurrentNode);
             }
 
-            foreach (Node NeighborNode in GridReference.GetNeighboringNodes(CurrentNode))
+            CurrentNode.FindSurroundingTiles();
+
+            foreach (Tile NeighborNode in CurrentNode.surrondingTiles)
             {
-                if (!NeighborNode.bIsWall || ClosedList.Contains(NeighborNode))
+                if (ClosedList.Contains(NeighborNode))
                 {
                     continue;
                 }
@@ -68,9 +72,11 @@ public class Pathfinding : MonoBehaviour
 
                 if (MoveCost < NeighborNode.igCost || !OpenList.Contains(NeighborNode))
                 {
+                    Debug.Log("Parents found");
+
                     NeighborNode.igCost = MoveCost;
-                    NeighborNode.ihCost = GetManhattenDistance(NeighborNode, TargetNode);
-                    NeighborNode.ParentNode = CurrentNode;
+                    NeighborNode.ihCost = GetManhattenDistance(NeighborNode, TargetTile);
+                    NeighborNode.parent = CurrentNode;
 
                     if(!OpenList.Contains(NeighborNode))
                     {
@@ -82,28 +88,27 @@ public class Pathfinding : MonoBehaviour
         }
     }
 
-    void GetFinalPath(Node a_StartingNode, Node a_EndNode)
+    void GetFinalPath(Tile a_StartingNode, Tile a_EndNode)
     {
-        //List<Node> FinalPath = new List<Node>();
-        List<Tile> FinalPath = new List<Tile>();
-        //Node CurrentNode = a_EndNode;
+        Stack<Tile> FinalPath = new Stack<Tile>();
         Tile CurrentNode = a_EndNode;
 
         while(CurrentNode != a_StartingNode)
         {
-            FinalPath.Add(CurrentNode);
-            CurrentNode = CurrentNode.ParentNode;
+            FinalPath.Push(CurrentNode);
+            CurrentNode = CurrentNode.parent;
         }
-
-        FinalPath.Reverse();
-
-        GridReference.FinalPath = FinalPath;
+        Debug.Log("Decided:");
+        move.SetPath(FinalPath);
     }
 
-    int GetManhattenDistance(Node a_nodeA, Node a_nodeB)
+    int GetManhattenDistance(Tile a_nodeA, Tile a_nodeB)
     {
-        int ix = Mathf.Abs(a_nodeA.iGridX - a_nodeB.iGridX);
-        int iy = Mathf.Abs(a_nodeA.iGridY - a_nodeB.iGridY);
+        Vector3 pos_NodeA = a_nodeA.transform.position;
+        Vector3 pos_NodeB = a_nodeB.transform.position;
+
+        int ix = (int)Mathf.Abs(pos_NodeA.x - pos_NodeB.x);
+        int iy = (int)Mathf.Abs(pos_NodeA.y - pos_NodeB.y);
 
         return ix + iy;
     }
