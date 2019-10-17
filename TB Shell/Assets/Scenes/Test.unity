@@ -339,52 +339,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3879211697986657531}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &46391025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 46391024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3ab002b493424449b23eb055c00f64d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actualTarget: {fileID: 0}
-  moving: 0
-  moveLimit: 0
-  attackLimit: 0
-  mother: {fileID: 2139006552}
-  attackStrength: 0
-  me: {fileID: 0}
-  target: {fileID: 0}
 --- !u!4 &46391027 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5777431253594885087, guid: ce25db148bfdb064bbd1fa031dcba9a2,
     type: 3}
   m_PrefabInstance: {fileID: 3879211697986657531}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &46391029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 46391024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f5da11cfed162943a666708824b6326, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inRange: 0
-  health: 0
-  damage: 0
-  level: 0
-  speed: 0
-  defense: 0
-  target: 0
-  selectable: 0
 --- !u!4 &59080350 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2914006648524911667, guid: b1be069804ea3784ba38ae9a16daa196,
@@ -7904,7 +7864,7 @@ PrefabInstance:
     - target: {fileID: 5777431253594885087, guid: ce25db148bfdb064bbd1fa031dcba9a2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5777431253594885087, guid: ce25db148bfdb064bbd1fa031dcba9a2,
         type: 3}
@@ -7946,6 +7906,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2111394818664096002, guid: ce25db148bfdb064bbd1fa031dcba9a2,
+        type: 3}
+      propertyPath: mother
+      value: 
+      objectReference: {fileID: 2139006552}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce25db148bfdb064bbd1fa031dcba9a2, type: 3}
 --- !u!1001 &7579071056292052361
