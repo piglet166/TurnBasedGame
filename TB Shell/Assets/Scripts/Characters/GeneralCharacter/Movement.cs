@@ -12,6 +12,7 @@ public class Movement : MonoBehaviour {
     Vector3 velocity = new Vector3();
     Vector3 heading = new Vector3();
     Tile currentTile;
+    public Tile actualTarget;
 
     public bool moving;
     public int moveLimit;
@@ -45,10 +46,10 @@ public class Movement : MonoBehaviour {
         return tile;
     }
 
-    public void CreateSurrTileList() {
+    public void CreateSurrTileList(Tile target) {
         foreach (GameObject tile in tiles) {
             Tile t = tile.GetComponent<Tile>();
-            t.FindSurroundingTiles();
+            t.FindSurroundingTiles(target);
         }
     }
 
@@ -60,7 +61,7 @@ public class Movement : MonoBehaviour {
     }
 
     public void BreadthFirstSeach() {
-        CreateSurrTileList();
+        CreateSurrTileList(null);
         GetCurrentTile();
 
         Queue<Tile> process = new Queue<Tile>();
@@ -113,6 +114,59 @@ public class Movement : MonoBehaviour {
                 }
             }
         }
+    }
+
+    protected void Astar(Tile target) {
+        CreateSurrTileList(target);
+        GetCurrentTile();
+
+        List<Tile> openList = new List<Tile>();
+        List<Tile> closedList = new List<Tile>();
+
+        openList.Add(currentTile);
+        //current.parent = null ??? <<<<<<<<<<<<<<<<<<<
+
+        currentTile.hCost = Vector3.Distance(currentTile.transform.position,
+                                                target.transform.position);
+        currentTile.fCost = currentTile.hCost;
+
+        //What if you can't reach the player or there's no path? <<<<<<<<<<<<<<<<,,
+        while (openList.Count > 0) {
+            Tile t = FindLowestFcost(openList);
+
+            closedList.Add(t);
+
+            if(t == target) {
+                actualTarget = FindEndTile(t);
+                MoveToTarget(actualTarget);
+                return;
+            }
+
+            foreach(Tile tile in t.surrondingTiles) {
+                if (closedList.Contains(tile)) {
+                    //do nothing
+
+                } else if (openList.Contains(tile)) {
+                    float newG = t.gCost + Vector3.Distance(tile.transform.position, t.transform.position);
+
+                    if(newG < tile.gCost) {
+                        tile.parent = t;
+
+                        tile.gCost = newG;
+                        tile.fCost = tile.gCost + tile.hCost;
+                    }
+                } else {
+                    tile.parent = t;
+
+                    tile.gCost = t.gCost + Vector3.Distance(tile.transform.position, t.transform.position);
+                    tile.hCost = Vector3.Distance(tile.transform.position, target.transform.position);
+                    tile.fCost = tile.gCost + tile.hCost;
+
+                    openList.Add(tile);
+                }
+            }
+        }
+        Debug.Log("Path not found");
     }
 
     public void MoveToTarget(Tile tile) {
@@ -198,5 +252,40 @@ public class Movement : MonoBehaviour {
 
     public void SetPath(Stack<Tile> p) {
         path = p;
+    }
+
+    protected Tile FindLowestFcost(List<Tile> list) {
+        Tile lowest = list[0];
+
+        foreach(Tile t in list) {
+            if(t.fCost < lowest.fCost) {
+                lowest = t;
+            }
+        }
+
+        list.Remove(lowest);
+
+        return lowest;
+    }
+
+    protected Tile FindEndTile(Tile t) {
+        Stack<Tile> tempPath = new Stack<Tile>();
+        Tile next = t.parent;
+
+        while(next != null) {
+            tempPath.Push(next);
+            next = next.parent;
+        }
+
+        if(tempPath.Count <= moveLimit) {
+            return t.parent;
+        }
+
+        Tile endTile = null;
+        for(int i = 0; i <= moveLimit; i++) {
+            endTile = tempPath.Pop();
+        }
+
+        return endTile;
     }
 }

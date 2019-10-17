@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMove : Movement
 {
     public TurnManager mother;
-    int myTurn;
+    public int myTurn;
     bool mayI;
     public int attackStrength;
     

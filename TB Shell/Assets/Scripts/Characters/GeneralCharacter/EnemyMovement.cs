@@ -8,10 +8,10 @@ public class EnemyMovement : Movement
     int myTurn;
     bool mayI;
     public int attackStrength;
-    public Pathfinding AI;
+    //public Pathfinding AI;
 
-    public GameObject StartPosition;
-    public GameObject TargetPosition;
+    public GameObject me;
+    public GameObject target;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +26,10 @@ public class EnemyMovement : Movement
     {
         if (MotherMayI()) {
             if (!moving) {
-                AI.FindPath(StartPosition, TargetPosition);
+                FindNearestTarget();
+                FindPath();
+                BreadthFirstSeach();
+                actualTarget.target = true;
 
             } else {
                 Move();
@@ -56,5 +59,29 @@ public class EnemyMovement : Movement
             TurnReset();
             Debug.Log("Enemy Done");
         }
+    }
+
+    void FindPath() {
+        Tile targetTile = GetTarget(target);
+        Astar(targetTile);
+    }
+
+    //Decision AI goes here!!!
+    void FindNearestTarget() {
+        GameObject[] targets = GameObject.FindGameObjectsWithTag("Player");
+
+        GameObject nearest = null;
+        float distance = Mathf.Infinity;
+
+        foreach(GameObject candidates in targets) {
+            float d = Vector3.Distance(transform.position, candidates.transform.position);
+
+            if(d < distance) {
+                distance = d;
+                nearest = candidates;
+            }
+        }
+
+        target = nearest;
     }
 }

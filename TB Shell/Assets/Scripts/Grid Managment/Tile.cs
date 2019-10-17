@@ -20,8 +20,9 @@ public class Tile : MonoBehaviour
     public int heuristic = 0;
     public int tilesMoved = 0;
 
-    public int igCost;
-    public int ihCost;
+    public float gCost = 0;
+    public float hCost = 0;
+    public float fCost = 0;
 
     void Start() {
         
@@ -45,13 +46,13 @@ public class Tile : MonoBehaviour
         }
     }
 
-    public void FindSurroundingTiles() {
+    public void FindSurroundingTiles(Tile target) {
         ResetSearch();
 
-        CheckTile(Vector3.forward);
-        CheckTile(-Vector3.forward);
-        CheckTile(Vector3.right);
-        CheckTile(-Vector3.right);
+        CheckTile(Vector3.forward, target);
+        CheckTile(-Vector3.forward, target);
+        CheckTile(Vector3.right, target);
+        CheckTile(-Vector3.right, target);
     }
 
     public void FindEnemy() {
@@ -72,6 +73,8 @@ public class Tile : MonoBehaviour
         visited = false;
         parent = null;
         tilesMoved = 0;
+
+        gCost = hCost = fCost = 0;
     }
 
     public void ResetEnemySearch() {
@@ -92,7 +95,7 @@ public class Tile : MonoBehaviour
         surrondingEnemies.Clear();
     }
 
-    public void CheckTile(Vector3 direction) {
+    public void CheckTile(Vector3 direction, Tile target) {
         Vector3 halfExtends = new Vector3(.25f, ((1 + 2) / 2f), .25f);
         Collider[] colliders = Physics.OverlapBox(transform.position + direction, halfExtends);
 
@@ -102,7 +105,8 @@ public class Tile : MonoBehaviour
             if (tile != null && tile.traversable) {
                 RaycastHit hit;
 
-                if (!Physics.Raycast(tile.transform.position, Vector3.up, out hit, 1)) {
+                if (!Physics.Raycast(tile.transform.position, Vector3.up, out hit, 1)
+                    || (tile == target)) {
 
                     surrondingTiles.Add(tile);
                 }
@@ -132,5 +136,5 @@ public class Tile : MonoBehaviour
         }
     }
 
-    public int FCost { get { return igCost + ihCost; } }
+    public float FCost { get { return gCost + hCost; } }
 }

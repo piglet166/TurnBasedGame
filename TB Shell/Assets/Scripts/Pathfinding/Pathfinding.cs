@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Pathfinding : MonoBehaviour
 {
-    public Movement move;
+    /*public EnemyMovement move;
     List<Tile> tilesInRange = new List<Tile>();
     List<CharacterType> enemiesInRange = new List<CharacterType>();
     Stack<Tile> path = new Stack<Tile>();
     GameObject[] tiles;
+
+
+    int count = 0;
 
     private void Awake()
     {
@@ -24,14 +27,13 @@ public class Pathfinding : MonoBehaviour
     {
         Tile StartTile = move.GetTarget(a_StartPos);
         Tile TargetTile = move.GetTarget(a_TargetPos);
-        //Get target and starting tiles instead of nodes
-
-        //List<Node> OpenList = new List<Node>();
-        //HashSet<Node> ClosedList = new HashSet<Node>();
         List<Tile> OpenList = new List<Tile>();
         HashSet<Tile> ClosedList = new HashSet<Tile>();
 
         OpenList.Add(StartTile);
+
+        StartTile.ihCost = GetManhattenDistance(StartTile, TargetTile);
+        StartTile.ifCost = StartTile.ihCost;
 
         while(OpenList.Count > 0)
         {
@@ -51,12 +53,9 @@ public class Pathfinding : MonoBehaviour
             Vector3 CurrentVector = CurrentNode.transform.position;
             Vector3 TargetVector = TargetTile.transform.position;
 
-            //trash code
-            TargetVector.x--;
-
             if (CurrentVector == TargetVector)
             {
-                GetFinalPath(StartTile, CurrentNode);
+                GetFinalPath(StartTile, TargetTile);
             }
 
             CurrentNode.FindSurroundingTiles();
@@ -68,11 +67,10 @@ public class Pathfinding : MonoBehaviour
                     continue;
                 }
 
-				int MoveCost = CurrentNode.igCost + GetManhattenDistance(CurrentNode, NeighborNode);
+				float MoveCost = CurrentNode.igCost + GetManhattenDistance(CurrentNode, NeighborNode);
 
                 if (MoveCost < NeighborNode.igCost || !OpenList.Contains(NeighborNode))
                 {
-                    Debug.Log("Parents found");
 
                     NeighborNode.igCost = MoveCost;
                     NeighborNode.ihCost = GetManhattenDistance(NeighborNode, TargetTile);
@@ -95,6 +93,8 @@ public class Pathfinding : MonoBehaviour
 
         while(CurrentNode != a_StartingNode)
         {
+            count++;
+            Debug.Log(count);
             FinalPath.Push(CurrentNode);
             CurrentNode = CurrentNode.parent;
         }
@@ -102,14 +102,14 @@ public class Pathfinding : MonoBehaviour
         move.SetPath(FinalPath);
     }
 
-    int GetManhattenDistance(Tile a_nodeA, Tile a_nodeB)
+    float GetManhattenDistance(Tile a_nodeA, Tile a_nodeB)
     {
         Vector3 pos_NodeA = a_nodeA.transform.position;
         Vector3 pos_NodeB = a_nodeB.transform.position;
 
-        int ix = (int)Mathf.Abs(pos_NodeA.x - pos_NodeB.x);
-        int iy = (int)Mathf.Abs(pos_NodeA.y - pos_NodeB.y);
+        float ix = Mathf.Abs(pos_NodeA.x - pos_NodeB.x);
+        float iy = Mathf.Abs(pos_NodeA.y - pos_NodeB.y);
 
         return ix + iy;
-    }
+    }*/
 }
