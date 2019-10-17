@@ -872,7 +872,7 @@ Transform:
   m_LocalScale: {x: 100, y: 100.00001, z: 100.00001}
   m_Children: []
   m_Father: {fileID: 491852}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &13720014
 SkinnedMeshRenderer:
@@ -899,6 +899,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1333,7 +1334,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 421316}
   - {fileID: 403136}
   - {fileID: 418624}
   m_Father: {fileID: 0}
@@ -1392,124 +1392,6 @@ MonoBehaviour:
   runSpeed: 5
   turnSpeed: 60
   gravity: 20
---- !u!1 &158312
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 421316}
-  - component: {fileID: 13787158}
-  m_Layer: 0
-  m_Name: bone
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &421316
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 158312}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.000000059604645, y: 0, z: -0.000000026077032}
-  m_LocalScale: {x: 100, y: 100.00001, z: 100.00001}
-  m_Children: []
-  m_Father: {fileID: 491852}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!137 &13787158
-SkinnedMeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 158312}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 3f77e64e2b720e44c87a34550ffca12f, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  serializedVersion: 2
-  m_Quality: 0
-  m_UpdateWhenOffscreen: 0
-  m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 4300002, guid: 8c7460f96e8004b4f8ccca93f126e395, type: 3}
-  m_Bones:
-  - {fileID: 429636}
-  - {fileID: 454364}
-  - {fileID: 486620}
-  - {fileID: 468522}
-  - {fileID: 431230}
-  - {fileID: 459356}
-  - {fileID: 491932}
-  - {fileID: 427572}
-  - {fileID: 451728}
-  - {fileID: 495576}
-  - {fileID: 407504}
-  - {fileID: 474704}
-  - {fileID: 422952}
-  - {fileID: 494508}
-  - {fileID: 404316}
-  - {fileID: 452076}
-  - {fileID: 443922}
-  - {fileID: 430086}
-  - {fileID: 414130}
-  - {fileID: 468966}
-  - {fileID: 418578}
-  - {fileID: 459604}
-  - {fileID: 444388}
-  - {fileID: 448820}
-  - {fileID: 491906}
-  - {fileID: 472930}
-  - {fileID: 479966}
-  - {fileID: 467224}
-  - {fileID: 418584}
-  - {fileID: 491964}
-  - {fileID: 467900}
-  - {fileID: 456644}
-  - {fileID: 454452}
-  - {fileID: 470182}
-  - {fileID: 430902}
-  - {fileID: 433682}
-  - {fileID: 497884}
-  - {fileID: 401598}
-  m_BlendShapeWeights: []
-  m_RootBone: {fileID: 429636}
-  m_AABB:
-    m_Center: {x: 0.0044839447, y: 0.008871724, z: 0.004664605}
-    m_Extent: {x: 0.0026463303, y: 0.005102002, z: 0.0057992362}
-  m_DirtyAABB: 0
 --- !u!1 &158980
 GameObject:
   m_ObjectHideFlags: 0
@@ -1877,7 +1759,7 @@ Transform:
   m_Children:
   - {fileID: 429636}
   m_Father: {fileID: 491852}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &192770
 GameObject:
