@@ -33,7 +33,7 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         HandleKeyboardInput();
-        HandleMouseInput();
+        //HandleMouseInput();  Might conflict with tile selection
     }
 
     void HandleMouseInput()
