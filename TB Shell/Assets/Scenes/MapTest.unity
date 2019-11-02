@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 0.5
+  m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -150,7 +150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73fe7ceb706784e22b5f4aade54b9b04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hexPrefab: {fileID: 1901911034279994, guid: 61a4f649633a1f94abeb21559df74bd4, type: 3}
 --- !u!4 &39352237
 Transform:
   m_ObjectHideFlags: 0
@@ -865,6 +864,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!95 &1800050716 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1313377713148463721, guid: 2a706d38b0303e641814160b109b7cca,
+    type: 3}
+  m_PrefabInstance: {fileID: 3221521864987761815}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1954361066
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1001,5 +1006,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1313377713148463721, guid: 2a706d38b0303e641814160b109b7cca,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 92cd868611a794ed38620c4530f2aa23, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a706d38b0303e641814160b109b7cca, type: 3}
+--- !u!1 &3221521864987761816 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3757907332262835311, guid: 2a706d38b0303e641814160b109b7cca,
+    type: 3}
+  m_PrefabInstance: {fileID: 3221521864987761815}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3221521864987761817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3221521864987761816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d21d5e3e949e04bdaac0ccc6506321d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 1800050716}

@@ -6,6 +6,7 @@ public class Swordsman : MonoBehaviour{
 
     PlayerMove movement;
     CharacterType stats;
+    //static Animator anim;
 
     cType swordsMan = cType.tSword;
     int vitality;
@@ -21,6 +22,8 @@ public class Swordsman : MonoBehaviour{
         speed = 5;
         defense = 10;
 
+        //anim = GetComponent<Animator>();
+
         movement = GetComponent<PlayerMove>();
         movement.moveLimit = speed;
         movement.attackLimit = 1;
@@ -35,6 +38,10 @@ public class Swordsman : MonoBehaviour{
     // Update is called once per frame
     void Update() {
 
+        /*if (Input.GetMouseButtonDown(0))
+        {
+            anim.SetTrigger("isWalking");
+        }*/
     }
 
     void Experience() {
