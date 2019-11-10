@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
+    private void Start() {
+        
+    }
+
+    private void Update() {
+        
+    }
+
     public void AttackOther(cType type, cType target) {
         switch (type) {
             case cType.tNull:

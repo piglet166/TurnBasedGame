@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class PlayerMove : Movement
 {
-    public TurnManager mother;
-    public int myTurn;
+    public PlayerManager mother;
     bool mayI;
     public int attackStrength;
+    public bool done;
     
     // Start is called before the first frame update
     void Start()
     {
-        myTurn = 0;
         mayI = false;
         Init();
     }
@@ -31,7 +30,7 @@ public class PlayerMove : Movement
                 Move();
             }
 
-            EndTurn();
+            isDone();
         }
     }
 
@@ -71,31 +70,14 @@ public class PlayerMove : Movement
     }
 
     bool MotherMayI() {
-        if (mother.GetTurn() > myTurn) {
-            mayI = false;
-        } else {
-            mayI = true;
-        }
+        mayI = mother.MotherMayI(done);
 
         return mayI;
     }
 
-    void EndTurn() {
-        if(moved > 1) {
-            mother.FinishTurn(myTurn);
-            TurnReset();
-            Debug.Log("Turn Ended");
-        }else if(attacked) {
-            mother.FinishTurn(myTurn);
-            TurnReset();
-            Debug.Log("Turn Ended");
-        }
-    }
-
-    void EndTurn(bool command) {
-        if (command) {
-            mother.FinishTurn(myTurn);
-            TurnReset();
+    public void isDone() {
+        if (moved > 1 || attacked) {
+            done = true;
         }
     }
 }

@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class EnemyMovement : Movement
 {
-    public TurnManager mother;
-    int myTurn;
+    public EnemyManager mother;
     bool mayI;
     public int attackStrength;
+    public bool done;
+    public bool agro;
     //public Pathfinding AI;
 
     public GameObject me;
@@ -16,8 +17,8 @@ public class EnemyMovement : Movement
     // Start is called before the first frame update
     void Start()
     {
-        myTurn = 1;
         mayI = false;
+        agro = false;
         Init();
     }
 
@@ -34,31 +35,17 @@ public class EnemyMovement : Movement
             } else {
                 Move();
             }
+        }
 
-            EndTurn();
+        if (!agro) {
+            Agro();
         }
     }
 
     bool MotherMayI() {
-        if (mother.GetTurn() < myTurn) {
-            mayI = false;
-        } else {
-            mayI = true;
-        }
+        mayI = mother.MotherMayI(done, agro);
 
         return mayI;
-    }
-
-    void EndTurn() {
-        if (moved > 1) {
-            mother.FinishTurn(myTurn);
-            TurnReset();
-            Debug.Log("Enemy Done");
-        } else if (attacked) {
-            mother.FinishTurn(myTurn);
-            TurnReset();
-            Debug.Log("Enemy Done");
-        }
     }
 
     void FindPath() {
@@ -83,5 +70,22 @@ public class EnemyMovement : Movement
         }
 
         target = nearest;
+    }
+
+    public void Agro() {
+        //create a range
+        
+        //if player piece enters range
+        //change agro to true;
+        //Add piece to EnemyMangager pieces list;
+        //enemy will keep attacking player until dead
+
+        //else agro remains false (no need to change)
+    }
+
+    public void isDone() {
+        if(moved > 1 || attacked) {
+            done = true;
+        }
     }
 }
