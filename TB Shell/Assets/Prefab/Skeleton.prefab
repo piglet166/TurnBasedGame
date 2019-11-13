@@ -45,8 +45,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1
-  m_Height: 1
+  m_Radius: 0.5
+  m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &8937296450422618057
@@ -79,6 +79,8 @@ MonoBehaviour:
   attackLimit: 0
   mother: {fileID: 0}
   attackStrength: 0
+  done: 0
+  agro: 0
   me: {fileID: 0}
   target: {fileID: 0}
 --- !u!114 &531537998233445753

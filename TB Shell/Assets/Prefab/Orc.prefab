@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8044255110658434567}
   m_Layer: 0
   m_Name: Orc
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,6 +73,8 @@ MonoBehaviour:
   attackLimit: 0
   mother: {fileID: 0}
   attackStrength: 0
+  done: 0
+  agro: 0
   me: {fileID: 0}
   target: {fileID: 0}
 --- !u!114 &6492157952649833341
@@ -97,10 +99,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1
-  m_Height: 2.5
+  m_Radius: 0.5
+  m_Height: 1.5
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1001 &3010464279193208496
 PrefabInstance:
   m_ObjectHideFlags: 0

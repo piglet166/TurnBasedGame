@@ -11,10 +11,8 @@ public class EnemyManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject[] ego = GameObject.FindGameObjectsWithTag("Enemies");
-
-        for (int i = 0; ego.Length > 0; i++) {
-            if(pieces[i].agro) pieces.Add(ego[i].GetComponent<EnemyMovement>());
+        foreach (GameObject piece in GameObject.FindGameObjectsWithTag("Enemy")) {
+            pieces.Add(piece.GetComponent<EnemyMovement>());
         }
 
         myTurn = 1;

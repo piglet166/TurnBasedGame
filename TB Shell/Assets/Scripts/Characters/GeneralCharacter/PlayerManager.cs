@@ -11,10 +11,8 @@ public class PlayerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject[] pgo = GameObject.FindGameObjectsWithTag("Player");
-
-        for (int i = 0; pgo.Length > 0; i++) {
-            pieces.Add(pgo[i].GetComponent<PlayerMove>());
+        foreach(GameObject piece in GameObject.FindGameObjectsWithTag("Enemy")) {
+            pieces.Add(piece.GetComponent<PlayerMove>());
         }
 
         myTurn = 0;

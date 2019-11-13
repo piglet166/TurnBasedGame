@@ -15,16 +15,16 @@ public class TurnManager : MonoBehaviour
     {
         turn = 0;
 
-        GameObject[] ego = GameObject.FindGameObjectsWithTag("Enemies");
-        GameObject[] pgo = GameObject.FindGameObjectsWithTag("Player");
+        //GameObject[] ego = GameObject.FindGameObjectsWithTag("Enemy");
+        //GameObject[] pgo = GameObject.FindGameObjectsWithTag("Player");
 
-        for(int i = 0;  ego.Length > 0; i++) {
-            enemies.Add(ego[i].GetComponent<EnemyMovement>());
-        }
+        //for(int i = 0;  ego.Length > 0; i++) {
+        //    enemies.Add(ego[i].GetComponent<EnemyMovement>());
+        //}
 
-        for (int i = 0; pgo.Length > 0; i++) {
-            players.Add(pgo[i].GetComponent<PlayerMove>());
-        }
+        //for (int i = 0; pgo.Length > 0; i++) {
+        //    players.Add(pgo[i].GetComponent<PlayerMove>());
+        //}
     }
 
     // Update is called once per frame
