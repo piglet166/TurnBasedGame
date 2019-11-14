@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 937965878282783000}
   - component: {fileID: 83102093192172717}
-  - component: {fileID: 7332093494087332646}
   - component: {fileID: 7447214842268880186}
+  - component: {fileID: 7332093494087332646}
   - component: {fileID: 7576556428172814112}
   m_Layer: 0
   m_Name: Princess
@@ -49,25 +49,6 @@ CapsuleCollider:
   m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 0.75, z: 0}
---- !u!114 &7332093494087332646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8088934818182435951}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fad23c6018d2754cbde5b2daa348ef0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actualTarget: {fileID: 0}
-  moving: 0
-  moveLimit: 0
-  attackLimit: 0
-  mother: {fileID: 0}
-  attackStrength: 0
-  done: 0
 --- !u!114 &7447214842268880186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,6 +69,25 @@ MonoBehaviour:
   defense: 0
   target: 0
   selectable: 0
+--- !u!114 &7332093494087332646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8088934818182435951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fad23c6018d2754cbde5b2daa348ef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actualTarget: {fileID: 0}
+  moving: 0
+  moveLimit: 0
+  attackLimit: 0
+  mother: {fileID: 0}
+  attackStrength: 0
+  done: 0
 --- !u!114 &7576556428172814112
 MonoBehaviour:
   m_ObjectHideFlags: 0

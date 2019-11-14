@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5986588411721397071}
   - component: {fileID: 1785148968935137240}
-  - component: {fileID: 8607694336489626068}
-  - component: {fileID: 6819811917232769026}
   - component: {fileID: 2995073271709286836}
+  - component: {fileID: 6819811917232769026}
+  - component: {fileID: 8607694336489626068}
   m_Layer: 0
   m_Name: Troll
   m_TagString: Enemy
@@ -49,7 +49,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &8607694336489626068
+--- !u!114 &2995073271709286836
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58,9 +58,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 2398244090595634443}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7332f0fc4e659484bac9aad54c981f24, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f5da11cfed162943a666708824b6326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inRange: 0
+  health: 0
+  damage: 0
+  level: 0
+  speed: 0
+  defense: 0
+  target: 0
+  selectable: 0
 --- !u!114 &6819811917232769026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,7 +91,7 @@ MonoBehaviour:
   agro: 0
   me: {fileID: 0}
   target: {fileID: 0}
---- !u!114 &2995073271709286836
+--- !u!114 &8607694336489626068
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,17 +100,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2398244090595634443}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f5da11cfed162943a666708824b6326, type: 3}
+  m_Script: {fileID: 11500000, guid: 7332f0fc4e659484bac9aad54c981f24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inRange: 0
-  health: 0
-  damage: 0
-  level: 0
-  speed: 0
-  defense: 0
-  target: 0
-  selectable: 0
 --- !u!1001 &7118365040333338044
 PrefabInstance:
   m_ObjectHideFlags: 0

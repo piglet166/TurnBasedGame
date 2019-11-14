@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Spearman : MonoBehaviour
 {
+    PlayerMove movement;
+    CharacterType stats;
+
     cType spearMan = cType.tSpear;
-    int vitality = 10;
-    int health;
+    int vitality;
     int level = 1;
     int damage;
     int speed;
@@ -14,10 +16,21 @@ public class Spearman : MonoBehaviour
     int enemiesDefeated = 0;
 
     void Start() {
-        health = vitality;
+        vitality = 10;
         damage = 5;
         speed = 10;
         defense = 5;
+
+        movement = GetComponent<PlayerMove>();
+        movement.moveLimit = speed;
+        movement.attackLimit = 1;
+        movement.attackStrength = damage;
+
+        stats = GetComponent<CharacterType>();
+        stats.damage = damage;
+        stats.health = vitality;
+        stats.speed = speed;
+        stats.defense = defense;
     }
     // Update is called once per frame
     void Update()
@@ -39,21 +52,5 @@ public class Spearman : MonoBehaviour
         damage++;
         speed++;
         defense++;
-    }
-
-    void TakeDamage(int attack) {
-        health = health + (defense / 2) - attack;
-    }
-
-    void Attack() {
-
-    }
-
-    void CounterAttack() {
-
-    }
-
-    void Throw() {
-
     }
 }

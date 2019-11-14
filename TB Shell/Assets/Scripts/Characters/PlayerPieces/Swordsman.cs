@@ -61,13 +61,5 @@ public class Swordsman : MonoBehaviour{
 
         movement.moveLimit = speed;
     }
-
-    void Attack() {
-
-    }
-
-    void Parry() {
-
-    }
         
 }

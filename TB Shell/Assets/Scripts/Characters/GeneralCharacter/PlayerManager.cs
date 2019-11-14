@@ -11,7 +11,7 @@ public class PlayerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        foreach(GameObject piece in GameObject.FindGameObjectsWithTag("Enemy")) {
+        foreach(GameObject piece in GameObject.FindGameObjectsWithTag("Player")) {
             pieces.Add(piece.GetComponent<PlayerMove>());
         }
 
@@ -25,8 +25,8 @@ public class PlayerManager : MonoBehaviour
             return;
         }
 
-        for(int i = 0; i < pieces.Count; i++) {
-            if (!pieces[i].done) {
+        foreach(PlayerMove piece in pieces) {
+            if (!piece.done) {
                 return;
             }
         }

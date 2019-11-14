@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3725619915507852876}
-  - component: {fileID: 3725619915507852879}
-  - component: {fileID: 1051187932449418553}
   - component: {fileID: 9042300807525331833}
   - component: {fileID: 1980819269457571103}
+  - component: {fileID: 1051187932449418553}
+  - component: {fileID: 3725619915507852879}
   m_Layer: 0
   m_Name: Swordsman
   m_TagString: Player
@@ -35,37 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3725619915507852879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3725619915507852873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53bf660a80d946d49865cae3d95c80a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1051187932449418553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3725619915507852873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fad23c6018d2754cbde5b2daa348ef0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actualTarget: {fileID: 0}
-  moving: 0
-  moveLimit: 0
-  attackLimit: 0
-  mother: {fileID: 0}
-  attackStrength: 0
-  done: 0
 --- !u!136 &9042300807525331833
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -100,6 +69,37 @@ MonoBehaviour:
   defense: 0
   target: 0
   selectable: 0
+--- !u!114 &1051187932449418553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3725619915507852873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fad23c6018d2754cbde5b2daa348ef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actualTarget: {fileID: 0}
+  moving: 0
+  moveLimit: 0
+  attackLimit: 0
+  mother: {fileID: 0}
+  attackStrength: 0
+  done: 0
+--- !u!114 &3725619915507852879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3725619915507852873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53bf660a80d946d49865cae3d95c80a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3725619914923032389
 PrefabInstance:
   m_ObjectHideFlags: 0

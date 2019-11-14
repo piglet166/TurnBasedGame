@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7431475453374387786}
   - component: {fileID: 5443788140897569401}
-  - component: {fileID: 7759612722190684198}
   - component: {fileID: 45359943724687591}
+  - component: {fileID: 7759612722190684198}
   - component: {fileID: 7141613995892069128}
   m_Layer: 0
   m_Name: Archer
@@ -49,25 +49,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &7759612722190684198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3757907332262835311}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fad23c6018d2754cbde5b2daa348ef0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actualTarget: {fileID: 0}
-  moving: 0
-  moveLimit: 0
-  attackLimit: 0
-  mother: {fileID: 0}
-  attackStrength: 0
-  done: 0
 --- !u!114 &45359943724687591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,6 +69,25 @@ MonoBehaviour:
   defense: 0
   target: 0
   selectable: 0
+--- !u!114 &7759612722190684198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3757907332262835311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fad23c6018d2754cbde5b2daa348ef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actualTarget: {fileID: 0}
+  moving: 0
+  moveLimit: 0
+  attackLimit: 0
+  mother: {fileID: 0}
+  attackStrength: 0
+  done: 0
 --- !u!114 &7141613995892069128
 MonoBehaviour:
   m_ObjectHideFlags: 0
