@@ -12,6 +12,7 @@ public class CharacterType : MonoBehaviour
     public int level;
     public int speed;
     public int defense;
+    public cType myType;
 
     //public bool current = false;
     public bool target = false;

@@ -21,7 +21,7 @@ public class Movement : MonoBehaviour {
     float piecePos = 0;
 
     protected int moved;
-    protected bool attacked;
+    public bool attacked;
 
     protected void Init() {
         tiles = GameObject.FindGameObjectsWithTag("Tile");
