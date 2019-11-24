@@ -42,17 +42,50 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
-    //we may need a coroutine
-    public void PlayTurn() {
-        //pick the best piece
-        
-        //if pieces are already at the player Attack
+    public void PlayTurn()
+	{
+		foreach (EnemyMovement em in pieces)
+		{
+			em.FindNearestTarget();
 
-        //if not already near a player, move towards the player
+			float playerDistance = Vector3.Distance(em.me.transform.position, em.target.transform.position);
+			float threshold = 5f;
+			bool wiseTarget = true;
 
-        //when piece is done, it's own "done" variable will turn true and piece will
-        //not be picked up in the loop anymore.
-    }
+			if (playerDistance < threshold)
+			{
+				cType mType = em.gameObject.GetComponent<CharacterType>().myType;
+				cType tType = em.target.GetComponent<CharacterType>().myType;
+
+				if (!(myType == tType))
+				{
+					if (!(mType == tSword && tType == tSpear))
+					{
+						if (!(mType == tSpear && tType == tHeavy))
+						{
+							if (!(mType == tHeavy && tType == tSword))
+							{
+								wiseTarget = false;
+							}
+						}
+					}
+				}
+			}
+
+			if (playerDistance > threshold || !wiseTarget)
+			{
+				foreach (EnemyMovement buddy in pieces)
+				{
+                    if (em.me != buddy.me)
+					{
+						em.target = buddy.me;
+					}
+				}
+			}
+		}
+
+		Endturn();
+	}
 
     public void Endturn() {
         grandma.FinishTurn(myTurn);

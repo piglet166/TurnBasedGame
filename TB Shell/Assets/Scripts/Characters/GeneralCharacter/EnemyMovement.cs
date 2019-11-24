@@ -27,7 +27,6 @@ public class EnemyMovement : Movement
     {
         if (MotherMayI()) {
             if (!moving) {
-                FindNearestTarget();
                 FindPath();
                 BreadthFirstSeach();
                 actualTarget.target = true;
@@ -54,7 +53,7 @@ public class EnemyMovement : Movement
     }
 
     //Decision AI goes here!!!
-    void FindNearestTarget() {
+    public void FindNearestTarget() {
         GameObject[] targets = GameObject.FindGameObjectsWithTag("Player");
 
         GameObject nearest = null;
