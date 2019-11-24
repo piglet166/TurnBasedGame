@@ -8,7 +8,7 @@ public class EnemyMovement : Movement
     bool mayI;
     public int attackStrength;
     public bool done;
-    public bool agro;
+    //public bool agro;
     //public Pathfinding AI;
 
     public GameObject me;
@@ -18,7 +18,7 @@ public class EnemyMovement : Movement
     void Start()
     {
         mayI = false;
-        agro = false;
+        //agro = false;
         Init();
     }
 
@@ -36,13 +36,13 @@ public class EnemyMovement : Movement
             }
         }
 
-        if (!agro) {
-            Agro();
-        }
+        //if (!agro) {
+        //    Agro();
+        //}
     }
 
     bool MotherMayI() {
-        mayI = mother.MotherMayI(done, agro);
+        mayI = mother.MotherMayI(done);
 
         return mayI;
     }

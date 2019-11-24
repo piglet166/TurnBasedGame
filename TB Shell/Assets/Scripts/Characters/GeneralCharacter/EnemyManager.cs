@@ -38,17 +38,19 @@ public class EnemyManager : MonoBehaviour
 
     public void StartTurn() {
         for (int i = 0; i < pieces.Count; i++) {
-            if(pieces[i].agro) pieces[i].done = false;
+            //if(pieces[i].agro) 
+            pieces[i].done = false;
         }
     }
 
     public void PlayTurn()
 	{
-		foreach (EnemyMovement em in pieces)
+        Debug.Log("PlayTurn");
+        foreach (EnemyMovement em in pieces)
 		{
 			em.FindNearestTarget();
 
-			float playerDistance = Vector3.Distance(em.me.transform.position, em.target.transform.position);
+			float playerDistance = Vector3.Distance(em.transform.position, em.target.transform.position);
 			float threshold = 5f;
 			bool wiseTarget = true;
 
@@ -57,13 +59,13 @@ public class EnemyManager : MonoBehaviour
 				cType mType = em.gameObject.GetComponent<CharacterType>().myType;
 				cType tType = em.target.GetComponent<CharacterType>().myType;
 
-				if (!(myType == tType))
+				if (!(mType == tType))
 				{
-					if (!(mType == tSword && tType == tSpear))
+					if (!(mType == cType.tSword && tType == cType.tSpear))
 					{
-						if (!(mType == tSpear && tType == tHeavy))
+						if (!(mType == cType.tSpear && tType == cType.tHeavy))
 						{
-							if (!(mType == tHeavy && tType == tSword))
+							if (!(mType == cType.tHeavy && tType == cType.tSword))
 							{
 								wiseTarget = false;
 							}
@@ -76,9 +78,9 @@ public class EnemyManager : MonoBehaviour
 			{
 				foreach (EnemyMovement buddy in pieces)
 				{
-                    if (em.me != buddy.me)
+                    if (em.transform.position != buddy.transform.position)
 					{
-						em.target = buddy.me;
+						em.target = buddy.gameObject;
 					}
 				}
 			}
@@ -95,13 +97,13 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
-    public bool MotherMayI(bool done, bool agro) {
+    public bool MotherMayI(bool done) {
         if (grandma.GetTurn() > 0) {
             return false;
         } else if (done) {
             return false;
-        } else if (!agro) {
-            return false;
+        //} else if (!agro) {
+        //    return false;
         }else {
             return true;
         }

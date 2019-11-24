@@ -10,6 +10,9 @@ public class TurnManager : MonoBehaviour
     public static List<PlayerMove> players = new List<PlayerMove>();
     int turn;
 
+    public PlayerManager pm;
+    public EnemyManager em;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,10 +41,13 @@ public class TurnManager : MonoBehaviour
     }
 
     public void FinishTurn(int t) {
+        Debug.Log("Turn changed");
         if (t > 0) {
             turn = 0;
+            pm.StartTurn();
         }else if(turn <= 0) {
             turn = 1;
+            em.StartTurn();
         } else {
             Debug.Log("Turn Manager is messed up " + turn);
         }
