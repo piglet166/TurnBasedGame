@@ -34,6 +34,7 @@ public class Swordsman : MonoBehaviour{
         stats.health = vitality;
         stats.speed = speed;
         stats.defense = defense;
+        stats.myType = swordsMan;
     }
     // Update is called once per frame
     void Update() {

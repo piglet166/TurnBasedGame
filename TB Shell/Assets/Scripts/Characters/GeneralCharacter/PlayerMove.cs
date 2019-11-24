@@ -8,18 +8,20 @@ public class PlayerMove : Movement
     bool mayI;
     public int attackStrength;
     public bool done;
+    public bool clicked;
     
     // Start is called before the first frame update
     void Start()
     {
         mayI = false;
+        clicked = false;
         Init();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (MotherMayI()) {
+        if (MotherMayI() && clicked) {
             if (!moving) {
                 BreadthFirstSeach();
                 EnemyBFS();
@@ -79,5 +81,9 @@ public class PlayerMove : Movement
         if (moved > 1 || attacked) {
             done = true;
         }
+    }
+
+    private void OnMouseDown() {
+        mother.SelectPiece(this);
     }
 }

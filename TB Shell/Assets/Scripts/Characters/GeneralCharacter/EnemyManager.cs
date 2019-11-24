@@ -45,9 +45,11 @@ public class EnemyManager : MonoBehaviour
 
     public void PlayTurn()
 	{
+        Debug.Log("Play Turn");
         foreach (EnemyMovement em in pieces)
 		{
 			em.FindNearestTarget();
+            Debug.Log(em.target.transform.position);
 
 			float playerDistance = Vector3.Distance(em.transform.position, em.target.transform.position);
 			float threshold = 5f;
@@ -80,23 +82,16 @@ public class EnemyManager : MonoBehaviour
                     if (em.transform.position != buddy.transform.position)
 					{
 						em.target = buddy.gameObject;
+                        Debug.Log(em.target.transform.position);
+                        break;
 					}
 				}
 			}
-
-			if (MotherMayI(em.done))
-			{
-				if (!(em.moving))
-				{
-					em.FindPath();
-					em.BreadthFirstSeach();
-					em.actualTarget.target = true;
-				}
-				else
-				{
-					em.Move();
-				}
-			}
+            if (!(em.moving)) {
+                em.FindPath();
+                em.BreadthFirstSeach();
+                em.actualTarget.target = true;
+            }
 		}
 
 		Endturn();

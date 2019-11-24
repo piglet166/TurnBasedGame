@@ -16,7 +16,7 @@ public class TurnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        turn = 0;
+        turn = 1;
 
         //GameObject[] ego = GameObject.FindGameObjectsWithTag("Enemy");
         //GameObject[] pgo = GameObject.FindGameObjectsWithTag("Player");
@@ -34,9 +34,9 @@ public class TurnManager : MonoBehaviour
     void Update()
     {
         if (turn > 0) {
-            //Debug.Log("Enemy Turn");
+
         } else {
-            //Debug.Log("Player Turn");
+
         }
     }
 

@@ -75,4 +75,12 @@ public class PlayerManager : MonoBehaviour
     public void PieceAdded(PlayerMove p) {
         pieces.Add(p);
     }
+
+    public void SelectPiece(PlayerMove p) {
+        foreach(PlayerMove piece in pieces) {
+            piece.clicked = false;
+        }
+
+        p.clicked = true;
+    }
 }

@@ -27,6 +27,7 @@ public class Spearman : MonoBehaviour
         movement.attackStrength = damage;
 
         stats = GetComponent<CharacterType>();
+        stats.myType = spearMan;
         stats.damage = damage;
         stats.health = vitality;
         stats.speed = speed;

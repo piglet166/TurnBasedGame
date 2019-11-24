@@ -22,19 +22,14 @@ public class EnemyMovement : Movement
         Init();
     }
 
-    // Update is called once per frame
- //   void Update()
- //   {
- //       if (MotherMayI()) {
- //           if (!moving) {
- //               FindPath();
- //               BreadthFirstSeach();
- //               actualTarget.target = true;
+   // update is called once per frame
+   void Update() {
+        if (moving) {
+            Move();
+        }
 
- //           } else {
- //               Move();
- //           }
- //       }
+        isDone();
+    }
 
 	//	if (!agro)
 	//	{

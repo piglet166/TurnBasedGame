@@ -26,13 +26,14 @@ public class Skeleton : MonoBehaviour
         movement = GetComponent<EnemyMovement>();
         movement.moveLimit = speed;
         movement.attackLimit = 1;
-        //movement.attackStrength = damage;
+        movement.attackStrength = damage;
 
         stats = GetComponent<CharacterType>();
         stats.damage = damage;
         stats.health = vitality;
         stats.speed = speed;
         stats.defense = defense;
+        stats.myType = swordsMan;
     }
 
     // Update is called once per frame
