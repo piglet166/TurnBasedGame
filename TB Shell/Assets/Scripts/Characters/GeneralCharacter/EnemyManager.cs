@@ -45,7 +45,6 @@ public class EnemyManager : MonoBehaviour
 
     public void PlayTurn()
 	{
-        Debug.Log("PlayTurn");
         foreach (EnemyMovement em in pieces)
 		{
 			em.FindNearestTarget();
@@ -82,6 +81,20 @@ public class EnemyManager : MonoBehaviour
 					{
 						em.target = buddy.gameObject;
 					}
+				}
+			}
+
+			if (MotherMayI(em.done))
+			{
+				if (!(em.moving))
+				{
+					em.FindPath();
+					em.BreadthFirstSeach();
+					em.actualTarget.target = true;
+				}
+				else
+				{
+					em.Move();
 				}
 			}
 		}

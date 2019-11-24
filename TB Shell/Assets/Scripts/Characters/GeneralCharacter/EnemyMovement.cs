@@ -23,23 +23,24 @@ public class EnemyMovement : Movement
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (MotherMayI()) {
-            if (!moving) {
-                FindPath();
-                BreadthFirstSeach();
-                actualTarget.target = true;
+ //   void Update()
+ //   {
+ //       if (MotherMayI()) {
+ //           if (!moving) {
+ //               FindPath();
+ //               BreadthFirstSeach();
+ //               actualTarget.target = true;
 
-            } else {
-                Move();
-            }
-        }
+ //           } else {
+ //               Move();
+ //           }
+ //       }
 
-        //if (!agro) {
-        //    Agro();
-        //}
-    }
+	//	if (!agro)
+	//	{
+	//		Agro();
+	//	}
+	//}
 
     bool MotherMayI() {
         mayI = mother.MotherMayI(done);
@@ -47,7 +48,7 @@ public class EnemyMovement : Movement
         return mayI;
     }
 
-    void FindPath() {
+    public void FindPath() {
         Tile targetTile = GetTarget(target);
         Astar(targetTile);
     }
