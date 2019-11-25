@@ -17863,6 +17863,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grandma: {fileID: 2139006552}
   myTurn: 0
+  myPrefab: {fileID: 2787824738335556126, guid: 5ac09581a147e4cb49ddff042aee6e64,
+    type: 3}
 --- !u!4 &595018713 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2914006648524911667, guid: b1be069804ea3784ba38ae9a16daa196,
@@ -32882,7 +32884,7 @@ PrefabInstance:
     - target: {fileID: 2460475240523819523, guid: d0fda7b8199c8814880336949177f759,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2460475240523819523, guid: d0fda7b8199c8814880336949177f759,
         type: 3}
@@ -32892,7 +32894,7 @@ PrefabInstance:
     - target: {fileID: 2460475240523819523, guid: d0fda7b8199c8814880336949177f759,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5
+      value: -19
       objectReference: {fileID: 0}
     - target: {fileID: 2460475240523819523, guid: d0fda7b8199c8814880336949177f759,
         type: 3}
@@ -60328,7 +60330,7 @@ PrefabInstance:
     - target: {fileID: 5777431253594885087, guid: ce25db148bfdb064bbd1fa031dcba9a2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 5777431253594885087, guid: ce25db148bfdb064bbd1fa031dcba9a2,
         type: 3}

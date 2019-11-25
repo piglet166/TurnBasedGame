@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMove : Movement
 {
     public PlayerManager mother;
+    public Attack attack;
     bool mayI;
     public int attackStrength;
     public bool done;
@@ -13,6 +14,7 @@ public class PlayerMove : Movement
     // Start is called before the first frame update
     void Start()
     {
+        attack = GetComponent<Attack>();
         mayI = false;
         clicked = false;
         Init();
@@ -85,5 +87,6 @@ public class PlayerMove : Movement
 
     private void OnMouseDown() {
         mother.SelectPiece(this);
+        attack.Selected();
     }
 }

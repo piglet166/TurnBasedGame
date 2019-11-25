@@ -29,7 +29,7 @@ public class CharacterType : MonoBehaviour
     }
 
     public void TakeDamage(int attack) {
-        health = health + (defense / 2) - attack;
+        health -= attack;
         Debug.Log("I'm hit!");
     }
 

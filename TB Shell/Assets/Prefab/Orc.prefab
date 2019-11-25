@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 831962943766343544}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3010464279193607170}
   m_Father: {fileID: 0}
@@ -67,6 +67,7 @@ MonoBehaviour:
   level: 0
   speed: 0
   defense: 0
+  myType: 0
   target: 0
   selectable: 0
 --- !u!114 &7507690377439324436
@@ -85,10 +86,11 @@ MonoBehaviour:
   moving: 0
   moveLimit: 0
   attackLimit: 0
+  attacked: 0
   mother: {fileID: 0}
   attackStrength: 0
   done: 0
-  agro: 0
+  clicked: 0
   me: {fileID: 0}
   target: {fileID: 0}
 --- !u!114 &6492157952649833341

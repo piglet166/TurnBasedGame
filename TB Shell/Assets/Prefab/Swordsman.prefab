@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1980819269457571103}
   - component: {fileID: 1051187932449418553}
   - component: {fileID: 3725619915507852879}
+  - component: {fileID: 1476900155240431198}
   m_Layer: 0
   m_Name: Swordsman
   m_TagString: Player
@@ -67,6 +68,7 @@ MonoBehaviour:
   level: 0
   speed: 0
   defense: 0
+  myType: 0
   target: 0
   selectable: 0
 --- !u!114 &1051187932449418553
@@ -85,9 +87,11 @@ MonoBehaviour:
   moving: 0
   moveLimit: 0
   attackLimit: 0
+  attacked: 0
   mother: {fileID: 0}
   attackStrength: 0
   done: 0
+  clicked: 0
 --- !u!114 &3725619915507852879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,6 +104,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bf660a80d946d49865cae3d95c80a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1476900155240431198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3725619915507852873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 696e0a130a97da644b79c632ae5ddf5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackLimit: 0
 --- !u!1001 &3725619914923032389
 PrefabInstance:
   m_ObjectHideFlags: 0

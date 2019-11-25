@@ -7,20 +7,26 @@ public class Attack : MonoBehaviour
     List<CharacterType> enemiesInRange = new List<CharacterType>();
     GameObject[] enemies;
 
-    Movement pieceMove;
+    PlayerMove pieceMove;
     cType type;
     
     public int attackLimit;
     float piecePos = 0;
 
     private void Start() {
-        pieceMove = GetComponent<Movement>();
+        pieceMove = GetComponent<PlayerMove>();
 
         type = GetComponent<CharacterType>().myType;
     }
 
     private void Update() {
-        
+        if (pieceMove.clicked) {
+            EnemySearch();
+
+            foreach(CharacterType e in enemiesInRange) {
+
+            }
+        }
     }
 
     void EnemySearch() {
@@ -53,8 +59,6 @@ public class Attack : MonoBehaviour
                     e.inRange = true;
 
                     enemiesInRange.Add(e);
-
-                    tile.GetComponent<Renderer>().material.color = Color.red;
                 }
             }
         }
@@ -80,10 +84,13 @@ public class Attack : MonoBehaviour
 
                 switch (type) {
                     case cType.tHeavy:
+                        health.TakeDamage(5);
                         break;
                     case cType.tSpear:
+                        health.TakeDamage(3);
                         break;
                     case cType.tSword:
+                        health.TakeDamage(8);
                         break;
                     default:
                         Debug.Log("put the type in the prefab");
@@ -95,10 +102,13 @@ public class Attack : MonoBehaviour
 
                 switch (type) {
                     case cType.tHeavy:
+                        health.TakeDamage(8);
                         break;
                     case cType.tSpear:
+                        health.TakeDamage(5);
                         break;
                     case cType.tSword:
+                        health.TakeDamage(3);
                         break;
                     default:
                         Debug.Log("put the type in the prefab");
@@ -110,10 +120,13 @@ public class Attack : MonoBehaviour
 
                 switch (type) {
                     case cType.tHeavy:
+                        health.TakeDamage(3);
                         break;
                     case cType.tSpear:
+                        health.TakeDamage(8);
                         break;
                     case cType.tSword:
+                        health.TakeDamage(5);
                         break;
                     default:
                         Debug.Log("put the type in the prefab");
