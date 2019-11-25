@@ -124,4 +124,12 @@ public class EnemyManager : MonoBehaviour
     public void PieceAdded(EnemyMovement p) {
         pieces.Add(p);
     }
+
+    public void SelectPiece(EnemyMovement e) {
+        foreach (EnemyMovement piece in pieces) {
+            piece.clicked = false;
+        }
+
+        e.clicked = true;
+    }
 }

@@ -84,4 +84,8 @@ public class EnemyMovement : Movement
             done = true;
         }
     }
+
+    private void OnMouseDown() {
+        mother.SelectPiece(this);
+    }
 }
