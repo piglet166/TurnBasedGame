@@ -101,7 +101,8 @@ public class EnemyManager : MonoBehaviour
 
 				Instantiate(myPrefab, new Vector3(xpos, ypos, zpos), Quaternion.identity);
 				em.target = myPrefab;
-				Debug.Log(em.target.transform.position);
+				Debug.Log(em.target.transform.position + "target");
+                Debug.Log(myPrefab.transform.position + "prefab");
 			}
 
 			if (!(em.moving)) {
