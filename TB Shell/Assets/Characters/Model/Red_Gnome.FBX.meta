@@ -1,179 +1,490 @@
 fileFormatVersion: 2
 guid: bf39294e5fbf9314281585172bbdf671
-timeCreated: 1436480665
-licenseType: Store
 ModelImporter:
-  serializedVersion: 18
-  fileIDToRecycleName:
-    100000: axe_bone
-    100002: axe_control
-    100004: axe_control_01
-    100006: beard03
-    100008: beard04
-    100010: beard05
-    100012: beard06
-    100014: beard07
-    100016: beard08
-    100018: beard09
-    100020: //RootNode
-    100022: Red_Gnome
-    100024: Red_gnome Footsteps
-    100026: Red_Gnome Head
-    100028: Red_Gnome HeadNub
-    100030: Red_Gnome L Calf
-    100032: Red_Gnome L Clavicle
-    100034: Red_Gnome L Finger0
-    100036: Red_Gnome L Finger01
-    100038: Red_Gnome L Finger0Nub
-    100040: Red_Gnome L Finger1
-    100042: Red_Gnome L Finger11
-    100044: Red_Gnome L Finger1Nub
-    100046: Red_Gnome L Finger2
-    100048: Red_Gnome L Finger21
-    100050: Red_Gnome L Finger2Nub
-    100052: Red_Gnome L Finger3
-    100054: Red_Gnome L Finger31
-    100056: Red_Gnome L Finger3Nub
-    100058: Red_Gnome L Finger4
-    100060: Red_Gnome L Finger41
-    100062: Red_Gnome L Finger4Nub
-    100064: Red_Gnome L Foot
-    100066: Red_Gnome L Forearm
-    100068: Red_Gnome L Hand
-    100070: Red_Gnome L Thigh
-    100072: Red_Gnome L Toe0
-    100074: Red_Gnome L Toe0Nub
-    100076: Red_Gnome L UpperArm
-    100078: Red_Gnome Neck
-    100080: Red_Gnome R Calf
-    100082: Red_Gnome R Clavicle
-    100084: Red_Gnome R Finger0
-    100086: Red_Gnome R Finger01
-    100088: Red_Gnome R Finger0Nub
-    100090: Red_Gnome R Finger1
-    100092: Red_Gnome R Finger11
-    100094: Red_Gnome R Finger1Nub
-    100096: Red_Gnome R Finger2
-    100098: Red_Gnome R Finger21
-    100100: Red_Gnome R Finger2Nub
-    100102: Red_Gnome R Finger3
-    100104: Red_Gnome R Finger31
-    100106: Red_Gnome R Finger3Nub
-    100108: Red_Gnome R Finger4
-    100110: Red_Gnome R Finger41
-    100112: Red_Gnome R Finger4Nub
-    100114: Red_Gnome R Foot
-    100116: Red_Gnome R Forearm
-    100118: Red_Gnome R Hand
-    100120: Red_Gnome R Thigh
-    100122: Red_Gnome R Toe0
-    100124: Red_Gnome R Toe0Nub
-    100126: Red_Gnome R UpperArm
-    100128: Red_Gnome Spine
-    100130: Red_Gnome Spine1
-    100132: Red_Gnome Spine2
-    100134: Red_Gnome Spine3
-    100136: Red_Gnome_mesh
-    100138: Red_Gnome_Pelvis
-    400000: axe_bone
-    400002: axe_control
-    400004: axe_control_01
-    400006: beard03
-    400008: beard04
-    400010: beard05
-    400012: beard06
-    400014: beard07
-    400016: beard08
-    400018: beard09
-    400020: //RootNode
-    400022: Red_Gnome
-    400024: Red_gnome Footsteps
-    400026: Red_Gnome Head
-    400028: Red_Gnome HeadNub
-    400030: Red_Gnome L Calf
-    400032: Red_Gnome L Clavicle
-    400034: Red_Gnome L Finger0
-    400036: Red_Gnome L Finger01
-    400038: Red_Gnome L Finger0Nub
-    400040: Red_Gnome L Finger1
-    400042: Red_Gnome L Finger11
-    400044: Red_Gnome L Finger1Nub
-    400046: Red_Gnome L Finger2
-    400048: Red_Gnome L Finger21
-    400050: Red_Gnome L Finger2Nub
-    400052: Red_Gnome L Finger3
-    400054: Red_Gnome L Finger31
-    400056: Red_Gnome L Finger3Nub
-    400058: Red_Gnome L Finger4
-    400060: Red_Gnome L Finger41
-    400062: Red_Gnome L Finger4Nub
-    400064: Red_Gnome L Foot
-    400066: Red_Gnome L Forearm
-    400068: Red_Gnome L Hand
-    400070: Red_Gnome L Thigh
-    400072: Red_Gnome L Toe0
-    400074: Red_Gnome L Toe0Nub
-    400076: Red_Gnome L UpperArm
-    400078: Red_Gnome Neck
-    400080: Red_Gnome R Calf
-    400082: Red_Gnome R Clavicle
-    400084: Red_Gnome R Finger0
-    400086: Red_Gnome R Finger01
-    400088: Red_Gnome R Finger0Nub
-    400090: Red_Gnome R Finger1
-    400092: Red_Gnome R Finger11
-    400094: Red_Gnome R Finger1Nub
-    400096: Red_Gnome R Finger2
-    400098: Red_Gnome R Finger21
-    400100: Red_Gnome R Finger2Nub
-    400102: Red_Gnome R Finger3
-    400104: Red_Gnome R Finger31
-    400106: Red_Gnome R Finger3Nub
-    400108: Red_Gnome R Finger4
-    400110: Red_Gnome R Finger41
-    400112: Red_Gnome R Finger4Nub
-    400114: Red_Gnome R Foot
-    400116: Red_Gnome R Forearm
-    400118: Red_Gnome R Hand
-    400120: Red_Gnome R Thigh
-    400122: Red_Gnome R Toe0
-    400124: Red_Gnome R Toe0Nub
-    400126: Red_Gnome R UpperArm
-    400128: Red_Gnome Spine
-    400130: Red_Gnome Spine1
-    400132: Red_Gnome Spine2
-    400134: Red_Gnome Spine3
-    400136: Red_Gnome_mesh
-    400138: Red_Gnome_Pelvis
-    4300000: Red_Gnome_mesh
-    7400000: 'Red_Gnome_idle '
-    7400002: Red_Gnome_cast
-    7400004: Red_Gnome_walk
-    7400006: Red_Gnome_attack
-    7400008: Red_Gnome_damage
-    7400010: Red_Gnome_idle_2
-    7400012: Red_Gnome_die
-    9500000: //RootNode
-    13700000: Red_Gnome_mesh
+  serializedVersion: 26
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: axe_bone
+  - first:
+      1: 100002
+    second: axe_control
+  - first:
+      1: 100004
+    second: axe_control_01
+  - first:
+      1: 100006
+    second: beard03
+  - first:
+      1: 100008
+    second: beard04
+  - first:
+      1: 100010
+    second: beard05
+  - first:
+      1: 100012
+    second: beard06
+  - first:
+      1: 100014
+    second: beard07
+  - first:
+      1: 100016
+    second: beard08
+  - first:
+      1: 100018
+    second: beard09
+  - first:
+      1: 100020
+    second: //RootNode
+  - first:
+      1: 100022
+    second: Red_Gnome
+  - first:
+      1: 100024
+    second: Red_gnome Footsteps
+  - first:
+      1: 100026
+    second: Red_Gnome Head
+  - first:
+      1: 100028
+    second: Red_Gnome HeadNub
+  - first:
+      1: 100030
+    second: Red_Gnome L Calf
+  - first:
+      1: 100032
+    second: Red_Gnome L Clavicle
+  - first:
+      1: 100034
+    second: Red_Gnome L Finger0
+  - first:
+      1: 100036
+    second: Red_Gnome L Finger01
+  - first:
+      1: 100038
+    second: Red_Gnome L Finger0Nub
+  - first:
+      1: 100040
+    second: Red_Gnome L Finger1
+  - first:
+      1: 100042
+    second: Red_Gnome L Finger11
+  - first:
+      1: 100044
+    second: Red_Gnome L Finger1Nub
+  - first:
+      1: 100046
+    second: Red_Gnome L Finger2
+  - first:
+      1: 100048
+    second: Red_Gnome L Finger21
+  - first:
+      1: 100050
+    second: Red_Gnome L Finger2Nub
+  - first:
+      1: 100052
+    second: Red_Gnome L Finger3
+  - first:
+      1: 100054
+    second: Red_Gnome L Finger31
+  - first:
+      1: 100056
+    second: Red_Gnome L Finger3Nub
+  - first:
+      1: 100058
+    second: Red_Gnome L Finger4
+  - first:
+      1: 100060
+    second: Red_Gnome L Finger41
+  - first:
+      1: 100062
+    second: Red_Gnome L Finger4Nub
+  - first:
+      1: 100064
+    second: Red_Gnome L Foot
+  - first:
+      1: 100066
+    second: Red_Gnome L Forearm
+  - first:
+      1: 100068
+    second: Red_Gnome L Hand
+  - first:
+      1: 100070
+    second: Red_Gnome L Thigh
+  - first:
+      1: 100072
+    second: Red_Gnome L Toe0
+  - first:
+      1: 100074
+    second: Red_Gnome L Toe0Nub
+  - first:
+      1: 100076
+    second: Red_Gnome L UpperArm
+  - first:
+      1: 100078
+    second: Red_Gnome Neck
+  - first:
+      1: 100080
+    second: Red_Gnome R Calf
+  - first:
+      1: 100082
+    second: Red_Gnome R Clavicle
+  - first:
+      1: 100084
+    second: Red_Gnome R Finger0
+  - first:
+      1: 100086
+    second: Red_Gnome R Finger01
+  - first:
+      1: 100088
+    second: Red_Gnome R Finger0Nub
+  - first:
+      1: 100090
+    second: Red_Gnome R Finger1
+  - first:
+      1: 100092
+    second: Red_Gnome R Finger11
+  - first:
+      1: 100094
+    second: Red_Gnome R Finger1Nub
+  - first:
+      1: 100096
+    second: Red_Gnome R Finger2
+  - first:
+      1: 100098
+    second: Red_Gnome R Finger21
+  - first:
+      1: 100100
+    second: Red_Gnome R Finger2Nub
+  - first:
+      1: 100102
+    second: Red_Gnome R Finger3
+  - first:
+      1: 100104
+    second: Red_Gnome R Finger31
+  - first:
+      1: 100106
+    second: Red_Gnome R Finger3Nub
+  - first:
+      1: 100108
+    second: Red_Gnome R Finger4
+  - first:
+      1: 100110
+    second: Red_Gnome R Finger41
+  - first:
+      1: 100112
+    second: Red_Gnome R Finger4Nub
+  - first:
+      1: 100114
+    second: Red_Gnome R Foot
+  - first:
+      1: 100116
+    second: Red_Gnome R Forearm
+  - first:
+      1: 100118
+    second: Red_Gnome R Hand
+  - first:
+      1: 100120
+    second: Red_Gnome R Thigh
+  - first:
+      1: 100122
+    second: Red_Gnome R Toe0
+  - first:
+      1: 100124
+    second: Red_Gnome R Toe0Nub
+  - first:
+      1: 100126
+    second: Red_Gnome R UpperArm
+  - first:
+      1: 100128
+    second: Red_Gnome Spine
+  - first:
+      1: 100130
+    second: Red_Gnome Spine1
+  - first:
+      1: 100132
+    second: Red_Gnome Spine2
+  - first:
+      1: 100134
+    second: Red_Gnome Spine3
+  - first:
+      1: 100136
+    second: Red_Gnome_mesh
+  - first:
+      1: 100138
+    second: Red_Gnome_Pelvis
+  - first:
+      4: 400000
+    second: axe_bone
+  - first:
+      4: 400002
+    second: axe_control
+  - first:
+      4: 400004
+    second: axe_control_01
+  - first:
+      4: 400006
+    second: beard03
+  - first:
+      4: 400008
+    second: beard04
+  - first:
+      4: 400010
+    second: beard05
+  - first:
+      4: 400012
+    second: beard06
+  - first:
+      4: 400014
+    second: beard07
+  - first:
+      4: 400016
+    second: beard08
+  - first:
+      4: 400018
+    second: beard09
+  - first:
+      4: 400020
+    second: //RootNode
+  - first:
+      4: 400022
+    second: Red_Gnome
+  - first:
+      4: 400024
+    second: Red_gnome Footsteps
+  - first:
+      4: 400026
+    second: Red_Gnome Head
+  - first:
+      4: 400028
+    second: Red_Gnome HeadNub
+  - first:
+      4: 400030
+    second: Red_Gnome L Calf
+  - first:
+      4: 400032
+    second: Red_Gnome L Clavicle
+  - first:
+      4: 400034
+    second: Red_Gnome L Finger0
+  - first:
+      4: 400036
+    second: Red_Gnome L Finger01
+  - first:
+      4: 400038
+    second: Red_Gnome L Finger0Nub
+  - first:
+      4: 400040
+    second: Red_Gnome L Finger1
+  - first:
+      4: 400042
+    second: Red_Gnome L Finger11
+  - first:
+      4: 400044
+    second: Red_Gnome L Finger1Nub
+  - first:
+      4: 400046
+    second: Red_Gnome L Finger2
+  - first:
+      4: 400048
+    second: Red_Gnome L Finger21
+  - first:
+      4: 400050
+    second: Red_Gnome L Finger2Nub
+  - first:
+      4: 400052
+    second: Red_Gnome L Finger3
+  - first:
+      4: 400054
+    second: Red_Gnome L Finger31
+  - first:
+      4: 400056
+    second: Red_Gnome L Finger3Nub
+  - first:
+      4: 400058
+    second: Red_Gnome L Finger4
+  - first:
+      4: 400060
+    second: Red_Gnome L Finger41
+  - first:
+      4: 400062
+    second: Red_Gnome L Finger4Nub
+  - first:
+      4: 400064
+    second: Red_Gnome L Foot
+  - first:
+      4: 400066
+    second: Red_Gnome L Forearm
+  - first:
+      4: 400068
+    second: Red_Gnome L Hand
+  - first:
+      4: 400070
+    second: Red_Gnome L Thigh
+  - first:
+      4: 400072
+    second: Red_Gnome L Toe0
+  - first:
+      4: 400074
+    second: Red_Gnome L Toe0Nub
+  - first:
+      4: 400076
+    second: Red_Gnome L UpperArm
+  - first:
+      4: 400078
+    second: Red_Gnome Neck
+  - first:
+      4: 400080
+    second: Red_Gnome R Calf
+  - first:
+      4: 400082
+    second: Red_Gnome R Clavicle
+  - first:
+      4: 400084
+    second: Red_Gnome R Finger0
+  - first:
+      4: 400086
+    second: Red_Gnome R Finger01
+  - first:
+      4: 400088
+    second: Red_Gnome R Finger0Nub
+  - first:
+      4: 400090
+    second: Red_Gnome R Finger1
+  - first:
+      4: 400092
+    second: Red_Gnome R Finger11
+  - first:
+      4: 400094
+    second: Red_Gnome R Finger1Nub
+  - first:
+      4: 400096
+    second: Red_Gnome R Finger2
+  - first:
+      4: 400098
+    second: Red_Gnome R Finger21
+  - first:
+      4: 400100
+    second: Red_Gnome R Finger2Nub
+  - first:
+      4: 400102
+    second: Red_Gnome R Finger3
+  - first:
+      4: 400104
+    second: Red_Gnome R Finger31
+  - first:
+      4: 400106
+    second: Red_Gnome R Finger3Nub
+  - first:
+      4: 400108
+    second: Red_Gnome R Finger4
+  - first:
+      4: 400110
+    second: Red_Gnome R Finger41
+  - first:
+      4: 400112
+    second: Red_Gnome R Finger4Nub
+  - first:
+      4: 400114
+    second: Red_Gnome R Foot
+  - first:
+      4: 400116
+    second: Red_Gnome R Forearm
+  - first:
+      4: 400118
+    second: Red_Gnome R Hand
+  - first:
+      4: 400120
+    second: Red_Gnome R Thigh
+  - first:
+      4: 400122
+    second: Red_Gnome R Toe0
+  - first:
+      4: 400124
+    second: Red_Gnome R Toe0Nub
+  - first:
+      4: 400126
+    second: Red_Gnome R UpperArm
+  - first:
+      4: 400128
+    second: Red_Gnome Spine
+  - first:
+      4: 400130
+    second: Red_Gnome Spine1
+  - first:
+      4: 400132
+    second: Red_Gnome Spine2
+  - first:
+      4: 400134
+    second: Red_Gnome Spine3
+  - first:
+      4: 400136
+    second: Red_Gnome_mesh
+  - first:
+      4: 400138
+    second: Red_Gnome_Pelvis
+  - first:
+      43: 4300000
+    second: Red_Gnome_mesh
+  - first:
+      74: 7400000
+    second: 'Red_Gnome_idle '
+  - first:
+      74: 7400002
+    second: Red_Gnome_cast
+  - first:
+      74: 7400004
+    second: Red_Gnome_walk
+  - first:
+      74: 7400006
+    second: Red_Gnome_attack
+  - first:
+      74: 7400008
+    second: Red_Gnome_damage
+  - first:
+      74: 7400010
+    second: Red_Gnome_idle_2
+  - first:
+      74: 7400012
+    second: Red_Gnome_die
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: Red_Gnome_mesh
+  externalObjects: {}
   materials:
     importMaterials: 0
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
+    resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
-    animationRotationError: .5
-    animationPositionError: .5
-    animationScaleError: .5
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
       name: 'Red_Gnome_idle '
       takeName: Take 001
+      internalID: 0
       firstFrame: 0
       lastFrame: 40
       wrapMode: 0
@@ -181,6 +492,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
@@ -455,9 +767,11 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Red_Gnome_cast
       takeName: Take 001
+      internalID: 0
       firstFrame: 40
       lastFrame: 80
       wrapMode: 0
@@ -465,6 +779,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
@@ -739,9 +1054,11 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Red_Gnome_walk
       takeName: Take 001
+      internalID: 0
       firstFrame: 81
       lastFrame: 111
       wrapMode: 0
@@ -749,6 +1066,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
@@ -1023,9 +1341,11 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Red_Gnome_attack
       takeName: Take 001
+      internalID: 0
       firstFrame: 112
       lastFrame: 166
       wrapMode: 0
@@ -1033,6 +1353,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
@@ -1045,7 +1366,14 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.34322038
+        functionName: DealDamage
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
@@ -1307,9 +1635,11 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Red_Gnome_damage
       takeName: Take 001
+      internalID: 0
       firstFrame: 166
       lastFrame: 221
       wrapMode: 0
@@ -1317,6 +1647,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
@@ -1591,9 +1922,11 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Red_Gnome_idle_2
       takeName: Take 001
+      internalID: 0
       firstFrame: 221
       lastFrame: 300
       wrapMode: 0
@@ -1601,6 +1934,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
@@ -1875,9 +2209,11 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Red_Gnome_die
       takeName: Take 001
+      internalID: 0
       firstFrame: 300
       lastFrame: 326
       wrapMode: 0
@@ -1885,6 +2221,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
@@ -2159,19 +2496,30 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 10
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
@@ -2179,24 +2527,34 @@ ModelImporter:
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
-    splitTangentsAcrossUV: 1
     normalImportMode: 0
-    tangentImportMode: 1
+    tangentImportMode: 4
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
+    serializedVersion: 3
     human: []
     skeleton: []
-    armTwist: .5
-    foreArmTwist: .5
-    upperLegTwist: .5
-    legTwist: .5
-    armStretch: .0500000007
-    legStretch: .0500000007
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
     feetSpacing: 0
+    globalScale: 10
     rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
+  humanoidOversampling: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

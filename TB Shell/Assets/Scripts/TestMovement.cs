@@ -17,11 +17,11 @@ public class TestMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.M))
         {
-            anim.SetBool("Walking", true);
+            anim.SetBool("Moving", true);
         }
         else
         {
-            anim.SetBool("Walking", false);
+            anim.SetBool("Moving", false);
         }
 
         if (Input.GetKey(KeyCode.N))
@@ -31,6 +31,15 @@ public class TestMovement : MonoBehaviour
         else
         {
             anim.SetBool("Attacking", false);
+        }
+
+        if (Input.GetKey(KeyCode.T))
+        {
+            anim.SetInteger("DeathValue", 1);
+        }
+        else
+        {
+            anim.SetInteger("DeathValue", 0);
         }
     }
 }

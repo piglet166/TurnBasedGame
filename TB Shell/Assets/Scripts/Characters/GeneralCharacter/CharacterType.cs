@@ -6,6 +6,9 @@ public enum cType { tArcher, tHeavy, tSpear, tSword, tNull };
 
 public class CharacterType : MonoBehaviour
 {
+
+    [SerializeField] Animator animator;
+
     public bool inRange = false;
     public int health;
     public int damage;
@@ -34,8 +37,17 @@ public class CharacterType : MonoBehaviour
     }
 
     void Death() {
+        //Play dying animation
+        animator.SetInteger("DeathValue", 1);
+        StartCoroutine(ResetDeathValue());
+
         Destroy(gameObject);
     }
-    
+
+    IEnumerator ResetDeathValue()
+    {
+        yield return null;
+        animator.SetInteger("DeathValue", 1);
+    }
     
 }
