@@ -17863,6 +17863,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grandma: {fileID: 2139006552}
   myTurn: 0
+  myPrefab: {fileID: 2787824738335556126, guid: 5ac09581a147e4cb49ddff042aee6e64,
+    type: 3}
 --- !u!4 &595018713 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2914006648524911667, guid: b1be069804ea3784ba38ae9a16daa196,
