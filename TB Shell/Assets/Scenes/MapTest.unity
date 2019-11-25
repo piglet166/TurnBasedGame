@@ -326,6 +326,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adba5869c7cde0f4f8ac3d801c8885a8, type: 3}
+--- !u!1 &227341724 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2398244090595634443, guid: a78de0002a899ab40a0cda93973c52f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1954361066}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &227341730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227341724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d21d5e3e949e04bdaac0ccc6506321d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 1670941727}
 --- !u!1001 &322721721
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -557,6 +576,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1482312874}
+--- !u!1 &700897524 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6833019371633867971, guid: ce25db148bfdb064bbd1fa031dcba9a2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1709086214}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &700897530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700897524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d21d5e3e949e04bdaac0ccc6506321d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 919722781}
 --- !u!1001 &765185298
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -631,6 +669,31 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: a581d07dc40364ae2831c5380765d86c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f2e5f5d37c51124dbd05bc3eb41d53b, type: 3}
+--- !u!1 &856047070 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 831962943766343544, guid: d0fda7b8199c8814880336949177f759,
+    type: 3}
+  m_PrefabInstance: {fileID: 1050089447}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &856047076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856047070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d21d5e3e949e04bdaac0ccc6506321d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 1433686187}
+--- !u!95 &919722781 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2176758779698011447, guid: ce25db148bfdb064bbd1fa031dcba9a2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1709086214}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1050089447
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -698,6 +761,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3010464279200576464, guid: d0fda7b8199c8814880336949177f759,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 7381f66965a1a48c3996cf213182b344, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0fda7b8199c8814880336949177f759, type: 3}
 --- !u!1 &1126927448 stripped
@@ -781,11 +849,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1890090353}
+--- !u!95 &1433686187 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3010464279200576464, guid: d0fda7b8199c8814880336949177f759,
+    type: 3}
+  m_PrefabInstance: {fileID: 1050089447}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &1482312874 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 238465573750973105, guid: b62cb1b38fbe4984d819fb3726ccfd0d,
     type: 3}
   m_PrefabInstance: {fileID: 330159705}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1670941727 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7118365040326019120, guid: a78de0002a899ab40a0cda93973c52f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1954361066}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1709086214
 PrefabInstance:
@@ -853,6 +933,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2176758779698011447, guid: ce25db148bfdb064bbd1fa031dcba9a2,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a31dbbbb6d6954a79b026ba02004d867, type: 2}
+    - target: {fileID: 2176758779698011447, guid: ce25db148bfdb064bbd1fa031dcba9a2,
+        type: 3}
+      propertyPath: m_WarningMessage
+      value: "\nBinding warning: Some generic clip(s) animate transforms that are
+        already bound by a Humanoid avatar. These transforms can only be changed by
+        Humanoid clips.\n\tTransform 'Bip001'\n\tTransform 'Bip001 R Foot'\n\tTransform
+        'Bip001 R Toe0'\n\tTransform 'Bip001 R UpperArm'\n\tTransform 'Bip001 R Calf'\n\tTransform
+        'Bip001 L Toe0'\n\tTransform 'Bip001 Head'\n\tTransform 'Bip001 L UpperArm'\n\tTransform
+        'Bip001 Neck'\n\tTransform 'Bip001 Spine'\n\tand more ...\n\tFrom animation
+        clip 'Sword And Shield Death'"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce25db148bfdb064bbd1fa031dcba9a2, type: 3}
@@ -1032,6 +1128,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7118365040326019120, guid: a78de0002a899ab40a0cda93973c52f4,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 37b0c676bf4e5454a899f498dc51d1da, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a78de0002a899ab40a0cda93973c52f4, type: 3}
 --- !u!1001 &3221521864987761815
