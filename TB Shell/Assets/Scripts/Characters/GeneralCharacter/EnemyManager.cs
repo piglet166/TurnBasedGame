@@ -7,6 +7,7 @@ public class EnemyManager : MonoBehaviour
     public TurnManager grandma;
     List<EnemyMovement> pieces = new List<EnemyMovement>();
     public int myTurn;
+	public GameObject myPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -81,13 +82,19 @@ public class EnemyManager : MonoBehaviour
 				{
                     if (em.transform.position != buddy.transform.position)
 					{
-						em.target = buddy.gameObject;
+						float xpos = em.transform.position.x + (buddy.transform.position.x - em.transform.position.x);
+						float ypos = em.transform.position.y;
+                        float zpos = em.transform.position.z + (buddy.transform.position.z - em.transform.position.z);
+
+						Instantiate(myPrefab, new Vector3(xpos, ypos, zpos), Quaternion.identity);
+						em.target = myPrefab;
                         Debug.Log(em.target.transform.position);
                         break;
 					}
 				}
 			}
-            if (!(em.moving)) {
+
+			if (!(em.moving)) {
                 em.FindPath();
                 em.BreadthFirstSeach();
                 em.actualTarget.target = true;
