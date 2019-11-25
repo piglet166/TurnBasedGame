@@ -10,6 +10,7 @@ public class EnemyMovement : Movement
     public bool done;
     //public bool agro;
     //public Pathfinding AI;
+    public bool clicked;
 
     public GameObject me;
     public GameObject target;

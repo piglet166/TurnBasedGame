@@ -41,7 +41,7 @@ public class TurnManager : MonoBehaviour
     }
 
     public void FinishTurn(int t) {
-        Debug.Log("Turn changed");
+        Debug.Log("Turn changed " + t);
         if (t > 0) {
             turn = 0;
             pm.StartTurn();
