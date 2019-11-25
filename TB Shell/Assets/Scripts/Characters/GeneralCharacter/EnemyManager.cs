@@ -95,14 +95,13 @@ public class EnemyManager : MonoBehaviour
 					}
 				}
                     
-				float xpos = em.transform.position.x + (closestFriend.x - em.transform.position.x);
+				float xpos = em.transform.position.x + (closestFriend.x - em.transform.position.x)/2;
 				float ypos = em.transform.position.y;
-				float zpos = em.transform.position.z + (closestFriend.z - em.transform.position.z);
+				float zpos = em.transform.position.z + (closestFriend.z - em.transform.position.z)/2;
 
 				Instantiate(myPrefab, new Vector3(xpos, ypos, zpos), Quaternion.identity);
 				em.target = myPrefab;
 				Debug.Log(em.target.transform.position);
-				break;
 			}
 
 			if (!(em.moving)) {
