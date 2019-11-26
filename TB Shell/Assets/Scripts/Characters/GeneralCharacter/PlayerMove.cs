@@ -10,6 +10,7 @@ public class PlayerMove : Movement
     public int attackStrength;
     public bool done;
     public bool clicked;
+    public Animator anim;
     
     // Start is called before the first frame update
     void Start()

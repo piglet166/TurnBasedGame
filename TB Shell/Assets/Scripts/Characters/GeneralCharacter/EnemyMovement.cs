@@ -27,6 +27,8 @@ public class EnemyMovement : Movement
    void Update() {
         if (moving) {
             Move();
+        } else {
+
         }
 
         isDone();
