@@ -55,13 +55,20 @@ public class EnemyManager : MonoBehaviour
 			float playerDistance = Vector3.Distance(em.transform.position, em.target.transform.position);
 			float threshold = 5f;
 			bool wiseTarget = true;
+            bool backedUp = false;
+
+            foreach(EnemyMovement e in pieces) {
+                if(Vector3.Distance(em.transform.position, e.transform.position) < 5) {
+                    backedUp = true;
+                }
+            }
 
 			if (playerDistance < threshold)
 			{
 				cType mType = em.gameObject.GetComponent<CharacterType>().myType;
 				cType tType = em.target.GetComponent<CharacterType>().myType;
 
-				if (!(mType == tType))
+				if (!(mType == tType) && !backedUp)
 				{
 					if (!(mType == cType.tSword && tType == cType.tSpear))
 					{
@@ -76,7 +83,7 @@ public class EnemyManager : MonoBehaviour
 				}
 			}
 
-			if (playerDistance > threshold || !wiseTarget)
+			if ((playerDistance > threshold || !wiseTarget) && !backedUp)
 			{
                 EnemyMovement closestFriend = null;
 				float closestDistance = Mathf.Infinity;
@@ -98,7 +105,7 @@ public class EnemyManager : MonoBehaviour
                 em.target = closestFriend.gameObject;
                 
 			}
-
+            
 			if (!(em.moving)) {
                 em.FindPath();
                 em.BreadthFirstSeach();
