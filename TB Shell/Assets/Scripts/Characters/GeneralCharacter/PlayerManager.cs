@@ -83,4 +83,20 @@ public class PlayerManager : MonoBehaviour
 
         p.clicked = true;
     }
+
+    public void DoneButton() {
+        foreach(PlayerMove piece in pieces) {
+            if (piece.clicked) piece.done = true;
+        }
+    }
+
+    public void AttackButton() {
+        foreach(PlayerMove piece in pieces) {
+            if (piece.clicked) {
+                Attack aScript = piece.gameObject.GetComponent<Attack>();
+                aScript.attacking = true;
+            }
+        }
+    }
+
 }

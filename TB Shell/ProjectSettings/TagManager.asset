@@ -8,6 +8,7 @@ TagManager:
   - Obstacle
   - Waypoint
   - Enemy
+  - Icon
   layers:
   - Default
   - TransparentFX

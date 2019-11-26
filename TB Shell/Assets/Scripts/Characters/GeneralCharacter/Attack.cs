@@ -7,25 +7,34 @@ public class Attack : MonoBehaviour
     List<CharacterType> enemiesInRange = new List<CharacterType>();
     GameObject[] enemies;
 
+    public GameObject icon;
     PlayerMove pieceMove;
     cType type;
     
     public int attackLimit;
     float piecePos = 0;
+    public bool attacking = false;
 
     private void Start() {
         pieceMove = GetComponent<PlayerMove>();
 
         type = GetComponent<CharacterType>().myType;
+
     }
 
     private void Update() {
         if (pieceMove.clicked) {
-            EnemySearch();
+            if (attacking) {
+                EnemySearch();
 
-            foreach(CharacterType e in enemiesInRange) {
+                foreach (CharacterType e in enemiesInRange) {
+                    Transform initVec = e.transform;
 
+                    Instantiate(icon, initVec);
+                }
             }
+        } else {
+            attacking = false;
         }
     }
 
@@ -39,6 +48,10 @@ public class Attack : MonoBehaviour
     }
 
     private void ResetEnemySearch() {
+        foreach(CharacterType e in enemiesInRange) {
+            e.inRange = false;
+        }
+
         enemiesInRange.Clear();
     }
 
@@ -68,12 +81,27 @@ public class Attack : MonoBehaviour
 
         if (pieceMove.attacked) return;
 
-        EnemySearch();
+        if (Input.GetMouseButtonUp(0)) {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit)) {
+                if (hit.collider.tag == "Enemy") {
+                    CharacterType enemy = hit.collider.GetComponent<CharacterType>();
+
+                    if (enemy.inRange) {
+                        Fight(enemy);
+                        pieceMove.Attacked();
+                    }
+                }
+            }
+        }
+
     }
 
-    public void Fight(cType target, CharacterType health) {
+    public void Fight(CharacterType target) {
 
-        switch (target) {
+        switch (target.myType) {
             case cType.tNull:
                 Debug.Log("Something's wrong");
                 return;
@@ -84,13 +112,13 @@ public class Attack : MonoBehaviour
 
                 switch (type) {
                     case cType.tHeavy:
-                        health.TakeDamage(5);
+                        target.TakeDamage(5);
                         break;
                     case cType.tSpear:
-                        health.TakeDamage(3);
+                        target.TakeDamage(3);
                         break;
                     case cType.tSword:
-                        health.TakeDamage(8);
+                        target.TakeDamage(8);
                         break;
                     default:
                         Debug.Log("put the type in the prefab");
@@ -102,13 +130,13 @@ public class Attack : MonoBehaviour
 
                 switch (type) {
                     case cType.tHeavy:
-                        health.TakeDamage(8);
+                        target.TakeDamage(8);
                         break;
                     case cType.tSpear:
-                        health.TakeDamage(5);
+                        target.TakeDamage(5);
                         break;
                     case cType.tSword:
-                        health.TakeDamage(3);
+                        target.TakeDamage(3);
                         break;
                     default:
                         Debug.Log("put the type in the prefab");
@@ -120,13 +148,13 @@ public class Attack : MonoBehaviour
 
                 switch (type) {
                     case cType.tHeavy:
-                        health.TakeDamage(3);
+                        target.TakeDamage(3);
                         break;
                     case cType.tSpear:
-                        health.TakeDamage(8);
+                        target.TakeDamage(8);
                         break;
                     case cType.tSword:
-                        health.TakeDamage(5);
+                        target.TakeDamage(5);
                         break;
                     default:
                         Debug.Log("put the type in the prefab");

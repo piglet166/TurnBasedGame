@@ -78,7 +78,7 @@ public class EnemyManager : MonoBehaviour
 
 			if (playerDistance > threshold || !wiseTarget)
 			{
-				Vector3 closestFriend = new Vector3(0, 0, 0);
+                EnemyMovement closestFriend = null;
 				float closestDistance = Mathf.Infinity;
 
 				foreach (EnemyMovement buddy in pieces)
@@ -89,20 +89,14 @@ public class EnemyManager : MonoBehaviour
 
                         if (currentDistance < closestDistance)
 						{
-							closestFriend = buddy.transform.position;
+							closestFriend = buddy;
 							closestDistance = currentDistance;
 						}
 					}
 				}
-                    
-				float xpos = em.transform.position.x + (closestFriend.x - em.transform.position.x)/2;
-				float ypos = em.transform.position.y;
-				float zpos = em.transform.position.z + (closestFriend.z - em.transform.position.z)/2;
 
-				Instantiate(myPrefab, new Vector3(xpos, ypos, zpos), Quaternion.identity);
-				em.target = myPrefab;
-				Debug.Log(em.target.transform.position + "target");
-                Debug.Log(myPrefab.transform.position + "prefab");
+                em.target = closestFriend.gameObject;
+                
 			}
 
 			if (!(em.moving)) {

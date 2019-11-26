@@ -51,6 +51,12 @@ public class TurnManager : MonoBehaviour
         } else {
             Debug.Log("Turn Manager is messed up " + turn);
         }
+
+        GameObject[] icons = GameObject.FindGameObjectsWithTag("Icon");
+
+        foreach (GameObject i in icons) {
+            Destroy(i);
+        }
     }
 
     public int GetTurn() {

@@ -29,12 +29,16 @@ public class PlayerMove : Movement
                 EnemyBFS();
                 CheckMouse();
                 PlayerInput();
+                attack.Selected();
 
             } else {
                 Move();
             }
 
             isDone();
+        } else {
+            
+            clicked = false;
         }
     }
 
